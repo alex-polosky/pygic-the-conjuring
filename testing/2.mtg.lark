@@ -1,0 +1,69 @@
+%import common (DIGIT, WS_INLINE)
+%ignore WS_INLINE
+
+%import primitives (_A,_B,_C,_D,_E,_F,_G,_H,_I,_J,_K,_L,_M,_N,_O,_P,_Q,_R,_S,_T,_U,_V,_W,_X,_Y,_Z,_PLURAL,_POSSESSIVE)
+%import primitives (WHOLE,ZERO,COMMA,PLUS,HYPHEN,SELF,COLON,PERIOD,DOT,BAR,PT)
+%import words (QUANTITY,COUNT,MORE,THAN,TOP,BOTTOM)
+%import words (ZONE)
+%import words (THE,TO,AND,OR,AND_OR,NOT)
+%import words (ARE,ARENT,CAN,CANT,COULD,COULDNT,DID,DIDNT,DOES,DOESNT,DO,DONT,HAD,HADNT,HAVE,HAVENT,HAS,HASNT,IS,ISNT,WAS,WASNT,WERE,WERENT,OPTIONAL)
+%import words (AT,ON,UNTIL,TRIGGER,THEN)
+%import words (A,AN,ANOTHER,ANY,EACH,ONLY,OTHER,THAT,THOSE,YOU,YOURE,YOUVE,YOUR,THEY,THEYRE,THEYVE,THERE,THEIR,NAMED)
+%import words (CONTROL,CARD,SPELL,TOKEN,ABILITY,TARGET,PLAYER,COMMANDER)
+%import words (FROM,OF)
+%import words (ATTACK,CHOOSE,PAY,PUT,TAP,UNTAP,DRAW,IN)
+%import words (TAPPED,UNTAPPED)
+%import words (LIFE,GAME,WIN,LOSE,COST)
+%import types (CARD_TYPE,SUBTYPE_ARTIFACT,SUBTYPE_ENCHANTMENT,SUBTYPE_BASICLAND,SUBTYPE_LAND,SUBTYPE_PLANESWALKER,SUBTYPE_SPELL,SUBTYPE_CREATURE,SUBTYPE_PLANAR,SUBTYPE_DUNGEON,SUBTYPE_BATTLE,SUBTYPE_ROLE_TOKEN,SUPERTYPE)
+%import types (COLOR,ENERGY_COST,TAP_COST,UNTAP_COST,MANA_COST,INVERT_TYPE,PW_COST)
+%import types (cost,subtype,card_type)
+%import abilities.ABILITY
+%import counters.MARKER
+%import keywords.KEYWORD
+
+// grammar
+
+start: line
+
+// conditional_action:
+
+// trigger:
+
+// costs:
+
+// can_be_put_on:
+
+// "Activated abilities"
+
+// [type]walk  (702.14.)
+// Protection from [x]  (702.16.)
+// [Type]cycling  (702.29.)
+
+activated_ability: cost effect
+
+triggered_ability: "ccc"
+
+static_ability: "ddd"
+
+keyword_action: "eee"
+
+keyword_ability: "fff"
+
+target: "ggg"
+
+ability: activated_ability
+    | static_ability
+    | keyword_ability
+
+action: keyword_action
+
+effect: "hhh"
+
+// duration:
+
+clause : action
+    | effect
+    | cost action
+    | cost effect
+
+line : clause PERIOD?

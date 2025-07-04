@@ -1,0 +1,263 @@
+%import primitives (_A,_B,_C,_D,_E,_F,_G,_H,_I,_J,_K,_L,_M,_N,_O,_P,_Q,_R,_S,_T,_U,_V,_W,_X,_Y,_Z,_PLURAL,_POSSESSIVE)
+%import primitives (HYPHEN)
+
+QUANTITY: _O"ne"
+    | _T"wo"
+    | _T"hree"
+    | _F"our"
+    | _F"ive"
+    | _S"ix"
+    | _S"even"
+    | _E"ight"
+    | _N"ine"
+    | _T"en"
+    | _E"leven"
+    | _T"welve"
+    | _T"hirteen"
+    | _F"ourteen"
+    | _F"ifteen"
+    | _S"ixteen"
+    | _S"eventeen"
+    | _E"ighteen"
+    | _N"ineteen"
+    | _T"wenty"
+    | _T"hirty"
+    | _F"ourty"
+    | _F"ifty"
+    | _S"ixty"
+    | _S"eventy"
+    | _E"ighty"
+    | _N"inety"
+    | _H"undred"
+COUNT.1: _F"irst"
+    | _S"econd"
+    | _T"hird"
+    | _F"ourth"
+    | _F"ifth"
+    | _S"ixth"
+    | _S"eventh"
+    | _E"ighth"
+    | _N"inth"
+    | _T"enth"
+TWICE       : "twice"
+ROUNDED.9   : "rounded " ("up" | "down")
+ALL         : _A"ll"
+NONE        : _N"one"
+BOTH        : "both"
+TOTAL       : "total"
+EQUAL       : "equal"
+FEWER       : "fewer"
+LESS        : "less"
+MORE        : "more"
+THAN        : "than"
+TOP         : "top"
+BOTTOM      : "bottom"
+EXTRA       : "extra"
+UP          : _U"p"
+
+//_BATTLEFIELD.9: "battlefield"
+ZONE.9: "graveyard" _PLURAL?
+    | "battlefield"
+    | "hand" _PLURAL?
+    | "stack"
+    | "library" | "libraries"
+    | "in exile" | "into exile" | "from exile" | "from graveyards or exile"
+    | "command zone"
+    | "ante"
+    | "anywhere" | "anywhere else"
+_PHASE: ("attackers are declared"
+        | "blockers are declared")
+    | ("upkeep"
+        | "combat") " step"?
+    | ("combat"
+        | "main") " phase"
+    | ("untap"
+        | "end"
+        | "draw"
+        | "declare attackers"
+        | "declare blockers"
+        | "combat damage"
+        | "cleanup") " step"
+PHASE: _PHASE _PLURAL?
+A_PHASE: "that step"
+    | "this step"
+    | "step or phase"
+    | "steps and phases"
+
+ALSO        : "also"
+AND         : "and"
+BUT         : "but"
+OR          : "or"
+AND_OR      : "and/or"
+NOT         : "not"
+
+ARE         : "are"
+ARENT       : "are not" | "aren't"
+CAN         : "can"
+CANT        : "can't" | CAN NOT | CAN " " NOT// | CAN WS_INLINE NOT
+COULD       : "could"
+COULDNT     : "could not" | "couldn't"
+DID         : "did"
+DIDNT       : "did not" | "didn't"
+DOES        : "does"
+DOESNT      : "does not" | "doesn't"
+DO          : "do"
+DONT        : "do not" | "don't"
+HAD         : "had"
+HADNT       : "had not" | "hadn't"
+HAVE        : "have"
+HAVENT      : "have not" | "haven't"
+HAS         : "has"
+HASNT       : "has not" | "hasn't"
+IS          : "is"
+ISNT        : "is not" | "isn't"
+WAS         : "was"
+WASNT       : "was not" | "wasn't"
+WERE        : "were"
+WERENT      : "were not" | "weren't"
+WHERE       : "where"
+
+ALREADY     : "already"
+IF          : _I"f"
+INSTEAD     : "instead"
+MAY         : "may"
+MUST        : "must"
+OTHERWISE   : _O"therwise"
+RATHER      : "rather"
+UNLESS      : _U"nless"
+WITH        : "with"
+WITHOUT     : WITH "out"
+WOULD       : "would"
+YET         : "yet"
+
+AT          : _A"t"
+BE          : "be"
+BY          : "by"
+ON          : _O"n"
+ONCE        : _O"nce"
+
+AFTER       : _A"fter"
+BEGINNING   : "beginning"
+DURING      : _D"uring"
+NEXT        : "next"
+THEN        : _T"hen"
+TIME        : "time" _PLURAL?
+TRIGGER.9   : _T"rigger" (_PLURAL | "ed")?
+WHEN        : _W"hen" | _W"henever"
+UNTIL       : _U"ntil"
+WHILE       : _W"hile"
+
+A           : _A
+AN          : _A"n"
+ANOTHER     : _A"nother"
+ANY         : _A"ny"
+AS          : _A"s"
+EACH        : _E"ach"
+NO          : _N"o"
+ONLY        : _O"nly"
+OTHER       : _O"ther"
+THAT        : _T"hat" _POSSESSIVE?
+THIS        : _T"his"
+THE         : _T"he"
+THEY        : _T"hey"
+THEYRE      : _T"hey are" | _T"hey're"
+THEYVE      : "they have"
+THERE       : _T"here"
+THEIR       : _T"heir"
+THOSE       : _T"hose"
+TO          : "to"
+YOU         : _Y"ou"
+YOURE       : _Y"ou are" | _Y"ou're"
+YOUVE       : _Y"ou have" | _Y"ou've"
+YOUR        : _Y"our"
+UNDER       : "under"
+WHO         : "who"
+
+NAMED       : _N"amed"
+CARD        : _C"ard" _PLURAL?
+DECK        : "deck"
+SPELL       : _S"pell" (_PLURAL | _POSSESSIVE)?
+TOKEN       : _T"oken" _PLURAL?
+ABILITYW    : _A"bility" _POSSESSIVE? | _A"bilities"
+TARGET      : _T"arget" (_PLURAL | "ed")?
+COMMANDER   : _C"ommander" _PLURAL?
+IT          : _I"t" (_PLURAL | _POSSESSIVE)?
+ITSELF      : "itself"
+THEM        : "them"
+SOURCE      : "source" _PLURAL?
+MANA        : _M"ana" " value"?
+MANASYM     : _M"ana symbol"
+OPPONENT    : _O"pponent" (_PLURAL | _POSSESSIVE)?
+PERMANENT   : _P"ermanent" (_PLURAL | _POSSESSIVE)?
+PLAYER.9    : _P"layer" (_PLURAL | _PLURAL "'" | _POSSESSIVE)?
+
+EXACTLY     : "exactly"
+EXCEPT      : "except"
+FOR         : "for"
+FROM        : "from"
+OF          : "of"
+THOUGH      : "though"
+UNSPENT     : "unspent"
+
+ADD         : _A"dd" _PLURAL?
+ADDITIONAL  : _A"ddition" "al"?
+ATTACK      : _A"ttack" (_PLURAL | "ed" | "ing")?
+BLOCK       : "block" ("ed" | "ing" | _PLURAL)?
+CHOOSE      : _C"hoose" _PLURAL?
+COMPLETE    : _C"omplete"
+COPY        : _C"opy"
+PAY         : _P"ay" | _P"ays" | _P"aid"
+PUT         : _P"ut" (_PLURAL | "ing")?
+TAP         : _T"ap" _PLURAL?
+UNTAP       : _U"ntap" _PLURAL?
+DRAW        : _D"raw" _PLURAL?
+TAKE        : _T"ake" _PLURAL?
+BECOMES     : "become" _PLURAL?
+CONTROL     : _C"ontrol" _PLURAL?
+GAIN        : "gain" (_PLURAL | "ed")?
+GET         : "get" _PLURAL?
+DEAL        : "deal" | "deals" | "dealt" | "dealing"
+END         : _E"nd"
+REDUCE.9    : "reduce" | "reduced"
+RETURN      : _R"eturn" _PLURAL? | _R"eturned"
+SWITCH      : _S"witch"
+ROLL        : _R"oll"
+RESOLVE     : _R"esolve" _PLURAL?
+ENTERS      : "enter" ("s" | "ed" |"ing")? (" the battlefield")?
+DIE         : "die" (_PLURAL | "d")?
+SKIP        : "skip" _PLURAL?
+SPEND       : "spend" | "spent"
+
+ABLE        : "able"
+ACTIVE      : _A"ctive" | _A"ctivating" | _A"ctivation"
+COPIES      : "copies"
+IN          : _I"n"
+DEFENDING   : "defending"
+TAPPED      : _T"apped"
+UNTAPPED    : _U"ntapped"
+FACEDOWN.8  : _F"ace" (" " | HYPHEN) "down"
+MODIFIED    : "modified"
+WAY         : "way"
+UNBLOCKED   : "unblocked"
+USE         : "use" | "using"
+STILL       : "still"
+INSTANCES   : "instances"
+NOTED       : "noted"
+
+LIFE        : _L"ife"
+GAME        : _G"ame"
+TURN        : _T"urn" (_PLURAL | _POSSESSIVE)?
+DAMAGE      : "damage"
+POWER       : "power"
+TOUGHNESSS  : "toughness"
+COMBATDAMAGE.9: "combat damage"
+TYPE        : "type" _PLURAL?
+
+WIN         : _W"in" _PLURAL?
+WON         : "won"
+LOSE        : _L"ose" _PLURAL?
+
+COST        : _C"ost" _PLURAL?
+
+SUB_TEXT    : "SUB_TEXT_" /\d+/
+INNER_TEXT  : "INNER_TEXT_" /\d+/

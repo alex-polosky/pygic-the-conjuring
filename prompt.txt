@@ -1,0 +1,1 @@
+Create a Python Lark compliant grammar for the text contained in the file `some-cards.txt`. Utilize the grammar contained in `grammar.txt` as a starting point. Output only the grammar, do not output any additional context.

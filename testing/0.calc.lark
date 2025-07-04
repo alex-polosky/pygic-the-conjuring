@@ -1,0 +1,24 @@
+// ignore spaces/tabs
+%import common.WS_INLINE
+%ignore WS_INLINE
+
+// tokens
+PLUS    : "+"
+MINUS   : "-"
+TIMES   : "*"
+DIVIDE  : "/"
+NUMBER  : /\d+(\.\d+)?/
+
+// grammar
+start  : expr
+
+expr   : expr PLUS term
+        | expr MINUS term
+        | term
+
+term   : term TIMES factor
+        | term DIVIDE factor
+        | factor
+
+factor : NUMBER
+        | "(" expr ")"

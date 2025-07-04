@@ -1,0 +1,537 @@
+start: ability+
+
+ability: mana_cost "," tap_symbol ":" ability_text
+       | mana_cost ":" ability_text
+       | tap_symbol ":" ability_text
+       | ability_text
+       | keyword_ability "—" ability_text
+       | planeswalker_ability
+
+planeswalker_ability: pw_cost ":" ability_text
+
+pw_cost: /[+-]?\d+/
+
+mana_cost: mana_symbol+
+
+mana_symbol: /[WUBRGCXYZ]/ | /\d+/
+
+tap_symbol: "TAP"
+
+ability_text: (ability_clause | conditional | effect | trigger | static_ability | activated_ability)+
+
+ability_clause: effect
+              | conditional
+              | trigger
+              | static_ability
+
+conditional: "if" condition "," effect
+           | "unless" condition
+           | "as long as" condition "," effect
+           | "when" condition "," effect
+           | "whenever" condition "," effect
+           | "at the beginning of" phase_or_step "," effect
+           | "at end of" phase_or_step "," effect
+           | "at the beginning of" phase_or_step "of" target "," effect
+
+trigger: "whenever" trigger_event "," effect
+       | "when" trigger_event "," effect
+       | "at the beginning of" phase_or_step "," effect
+       | "at end of" phase_or_step "," effect
+
+trigger_event: card_reference action
+             | "a" card_type action
+             | "an" card_type action
+             | target action
+             | condition
+
+static_ability: card_reference "get" pt_mod
+              | card_reference "have" keyword
+              | card_reference "has" keyword
+              | card_reference "can" action
+              | card_reference "can not" action
+              | card_reference "cannot" action
+              | card_reference "loses" keyword
+              | card_reference "is" card_type
+              | card_reference "are" card_type
+
+activated_ability: cost ":" effect
+
+cost: mana_cost
+    | mana_cost "," additional_cost
+    | additional_cost
+    | tap_symbol
+    | "ABILITY" target
+    | "ABILITY" quantity card_type
+    | "ABILITY" "~"
+    | "ABILITY" "a" card_type
+    | "ABILITY" "an" card_type
+    | "pay" digit "life"
+    | "remove" quantity counter_type "from" target
+    | "return" target "to" location
+
+additional_cost: "ABILITY" target
+               | "ABILITY" "~"
+               | "ABILITY" "a" card_type
+               | "ABILITY" "an" card_type
+               | "pay" digit "life"
+               | "remove" quantity counter_type "from" target
+               | "return" target "to" location
+               | "ABILITY" quantity "cards"
+               | "ABILITY" "a" "card"
+               | tap_symbol target
+
+effect: "ABILITY" create_token
+      | "ABILITY" quantity create_token
+      | "add" mana_value
+      | "draw" quantity "cards"
+      | "draw" "a" "card"
+      | "you" "gain" digit "life"
+      | "you" "lose" digit "life"
+      | target "gets" pt_mod duration
+      | target "gains" keyword duration
+      | target "loses" keyword duration
+      | "return" target "to" location
+      | "put" target location
+      | "ABILITY" target
+      | "choose" choice
+      | "ABILITY" target
+      | target "deals" digit "damage" "to" target
+      | "prevent" damage_clause
+      | "counter" target
+      | "you" "may" effect
+      | "each" target effect
+      | "all" card_type effect
+      | "gain" "control" "of" target duration
+      | "copy" target
+      | "search" location "for" card_description
+      | "look" "at" card_description
+      | "reveal" card_description
+      | "mill" quantity "cards"
+      | "shuffle" location
+      | "tap" target
+      | "untap" target
+      | "transform" target
+      | "flip" target
+      | "exile" target
+      | "destroy" target
+      | "scry" digit
+      | target "becomes" card_type duration
+      | target "can" action duration
+      | target "can" "not" action duration
+      | target "cannot" action duration
+      | "if" "you" "do" "," effect
+      | "if" "you" "do" "not" "," effect
+      | "then" effect
+      | "otherwise" "," effect
+      | "fight" target
+      | "explore"
+      | "investigate"
+      | "proliferate"
+      | "surveil" digit
+      | "adapt" digit
+      | "amass" digit
+      | "populate"
+      | "bolster" digit
+      | "support" digit
+      | "fabricate" digit
+      | "revolt"
+      | "improvise"
+      | "crew" digit
+      | "emerge"
+      | "devoid"
+      | "ingest"
+      | "process"
+      | "converge"
+      | "awaken" digit
+      | "landfall"
+      | "rally"
+      | "cohort"
+      | "surge"
+      | "madness"
+      | "skulk"
+      | "prowess"
+      | "menace"
+      | "deathtouch"
+      | "lifelink"
+      | "vigilance"
+      | "flying"
+      | "first" "strike"
+      | "double" "strike"
+      | "trample"
+      | "reach"
+      | "haste"
+      | "flash"
+      | "defender"
+      | "hexproof"
+      | "shroud"
+      | "protection"
+      | "indestructible"
+      | "regenerate"
+      | "bushido"
+      | "ninjutsu"
+      | "offering"
+      | "splice"
+      | "soulshift"
+      | "channel"
+      | "bloodthirst"
+      | "living" "weapon"
+      | "battle" "cry"
+      | "infect"
+      | "undying"
+      | "miracle"
+      | "soulbond"
+      | "overload"
+      | "scavenge"
+      | "unleash"
+      | "cipher"
+      | "evolve"
+      | "extort"
+      | "fuse"
+      | "bestow"
+      | "tribute"
+      | "inspired"
+      | "constellation"
+      | "strive"
+      | "convoke"
+      | "delve"
+      | "ferocious"
+      | "outlast"
+      | "prowess"
+      | "dash"
+      | "exploit"
+      | "megamorph"
+      | "renown"
+      | "spell" "mastery"
+      | "devour"
+      | "modular"
+      | "sunburst"
+      | "affinity"
+      | "imprint"
+      | "entwine"
+      | "equip"
+      | "fortify"
+      | "champion"
+      | "changeling"
+      | "evoke"
+      | "hideaway"
+      | "graft"
+      | "frenzy"
+      | "poisonous"
+      | "transfigure"
+      | "aura" "swap"
+      | "delve"
+      | "cascade"
+      | "annihilator"
+      | "level" "up"
+      | "rebound"
+      | "totem" "armor"
+      | "exalted"
+      | "unearth"
+      | "persist"
+      | "wither"
+      | "retrace"
+      | "devour"
+      | "modular"
+      | "sunburst"
+
+create_token: pt color_qual sub_type card_type "token" keyword_list?
+            | "token" "that" "is" "a" "copy" "of" target
+            | "tapped" pt color_qual sub_type card_type "token"
+
+pt: digit "/" digit
+
+pt_mod: "+" digit "/" "+" digit duration?
+      | "-" digit "/" "-" digit duration?
+      | "+" digit "/" digit duration?
+      | digit "/" digit duration?
+
+color_qual: "COLOR_QUAL"
+
+sub_type: "SUB_TYPE"
+
+card_type: "CARD_TYPE"
+
+super_type: "SUPER_TYPE"
+
+keyword: "KEYWORD"
+       | "flying"
+       | "first" "strike"
+       | "double" "strike"
+       | "deathtouch"
+       | "lifelink"
+       | "vigilance"
+       | "trample"
+       | "reach"
+       | "haste"
+       | "flash"
+       | "defender"
+       | "hexproof"
+       | "shroud"
+       | "indestructible"
+       | "menace"
+       | "prowess"
+       | "skulk"
+       | "crew"
+       | "emerge"
+       | "devoid"
+       | "ingest"
+       | "process"
+       | "converge"
+       | "awaken"
+       | "landfall"
+       | "rally"
+       | "cohort"
+       | "surge"
+       | "madness"
+       | x_walk
+
+x_walk: /\w+walk/
+
+keyword_list: "with" keyword ("and" keyword)*
+
+keyword_ability: "ABILITY_IMPLICIT"
+
+counter_type: "COUNTER_TYPE"
+
+target: "target" card_description
+      | "enchanted" card_type
+      | "equipped" card_type
+      | "~"
+      | "it"
+      | "that" card_type
+      | "this" card_type
+      | "each" card_type
+      | "all" card_type
+      | "another" card_type
+      | "other" card_type
+      | "any" card_type
+      | "each" "other" card_type
+      | "all" "other" card_type
+      | "any" "other" card_type
+      | "up" "to" quantity "target" card_description
+      | quantity "target" card_description
+      | "any" "target"
+      | "any" "number" "of" "target" card_description
+      | "any" "number" "of" card_description
+      | "a" card_type
+      | "an" card_type
+      | "the" card_type
+      | card_reference
+
+card_reference: "~"
+              | "it"
+              | "that" card_type
+              | "this" card_type
+              | "enchanted" card_type
+              | "equipped" card_type
+              | card_type "you" "control"
+              | card_type "an" "opponent" "controls"
+              | card_type "target" "player" "controls"
+              | "nontoken" card_type
+              | "attacking" card_type
+              | "blocking" card_type
+              | "tapped" card_type
+              | "untapped" card_type
+              | color_qual card_type
+              | super_type card_type
+              | sub_type card_type
+              | card_type "with" keyword
+              | card_type "without" keyword
+              | card_type "with" "power" digit number_mod
+              | card_type "with" "toughness" digit number_mod
+              | card_type "with" "mana" "value" digit number_mod
+              | card_type "with" counter_type
+              | card_type "with" "a" counter_type "on" "it"
+              | "modified" card_type
+
+card_description: card_type
+                | color_qual card_type
+                | super_type card_type
+                | sub_type card_type
+                | card_type "with" keyword
+                | card_type "without" keyword
+                | card_type "with" "power" digit number_mod
+                | card_type "with" "toughness" digit number_mod
+                | card_type "with" "mana" "value" digit number_mod
+                | card_type "card"
+                | card_type card_type "card"
+                | "nontoken" card_type
+                | "attacking" card_type
+                | "blocking" card_type
+                | "tapped" card_type
+                | "untapped" card_type
+
+condition: "you" "control" card_description
+         | "an" "opponent" "controls" card_description
+         | "target" "player" "controls" card_description
+         | card_reference "is" card_type
+         | card_reference "has" keyword
+         | card_reference "is" "attacking"
+         | card_reference "is" "blocking"
+         | card_reference "is" "tapped"
+         | card_reference "is" "untapped"
+         | card_reference "died" "this" "turn"
+         | card_reference "entered" "the" "battlefield" "this" "turn"
+         | card_reference "was" "dealt" "damage" "this" "turn"
+         | "you" "gained" "life" "this" "turn"
+         | "you" "lost" "life" "this" "turn"
+         | "you" "attacked" "this" "turn"
+         | "you" "have" quantity number_mod "cards" "in" "hand"
+         | "you" "have" quantity number_mod counter_type
+         | "an" "opponent" "has" quantity number_mod counter_type
+         | "target" "player" "has" quantity number_mod counter_type
+         | keyword "was" "paid"
+         | keyword "wasn't" "paid"
+         | "this" "spell" "was" "kicked"
+         | "this" "spell" "wasn't" "kicked"
+         | "exactly" quantity card_type
+         | "at" "least" quantity card_type
+         | quantity number_mod card_type
+         | "a" card_type "died" "this" "turn"
+         | "an" card_type "died" "this" "turn"
+         | card_type "died" "this" "turn"
+
+action: "attack"
+      | "block"
+      | "be" "blocked"
+      | "deal" "damage"
+      | "deal" "combat" "damage"
+      | "die"
+      | "enter" "the" "battlefield"
+      | "leave" "the" "battlefield"
+      | "become" "tapped"
+      | "become" "untapped"
+      | "transform"
+      | "mutate"
+      | "cycle"
+      | "exploit"
+      | "scry"
+      | "surveil"
+      | "mill"
+      | "draw"
+      | "discard"
+      | "search"
+      | "shuffle"
+      | "reveal"
+      | "look"
+      | "ABILITY"
+      | "cast"
+      | "play"
+
+duration: "until" "end" "of" "turn"
+        | "until" "your" "next" "turn"
+        | "until" "end" "of" "combat"
+        | "for" "as" "long" "as" condition
+        | "as" "long" "as" target "remains" "tapped"
+        | "until" target "leaves" "the" "battlefield"
+        | "this" "turn"
+
+phase_or_step: "STEP_OR_PHASE"
+             | "upkeep"
+             | "draw" "step"
+             | "main" "phase"
+             | "precombat" "main" "phase"
+             | "beginning" "of" "combat"
+             | "declare" "attackers" "step"
+             | "declare" "blockers" "step"
+             | "combat" "damage" "step"
+             | "end" "of" "combat"
+             | "postcombat" "main" "phase"
+             | "end" "step"
+             | "cleanup" "step"
+             | "combat"
+
+location: "your" "hand"
+        | "their" "hand"
+        | "its" "owner's" "hand"
+        | "their" "owners'" "hands"
+        | "the" "battlefield"
+        | "your" "graveyard"
+        | "their" "graveyard"
+        | "your" "library"
+        | "their" "library"
+        | "exile"
+        | "the" "command" "zone"
+        | "on" "top" "of" "your" "library"
+        | "on" "the" "bottom" "of" "your" "library"
+        | "on" "top" "of" "their" "library"
+        | "on" "the" "bottom" "of" "their" "library"
+        | "into" "your" "hand"
+        | "into" "their" "hand"
+        | "onto" "the" "battlefield"
+        | "into" "your" "graveyard"
+        | "into" "their" "graveyard"
+        | "from" "your" "graveyard"
+        | "from" "their" "graveyard"
+        | "from" "your" "hand"
+        | "from" "their" "hand"
+        | "from" "the" "battlefield"
+        | "from" "exile"
+
+choice: "a" "color"
+      | "a" card_type "type"
+      | "odd" "or" "even"
+      | "friend" "or" "foe"
+      | sub_type "or" sub_type
+      | "target" "spell" "or" "permanent"
+      | "a" "card" "name"
+
+damage_clause: "all" "damage" "that" "would" "be" "dealt" "to" target "this" "turn"
+             | "all" "combat" "damage" "that" "would" "be" "dealt" "by" target "this" "turn"
+             | "the" "next" digit "damage" "that" "would" "be" "dealt" "to" target "this" "turn"
+             | "all" "damage" "that" "would" "be" "dealt" "to" "and" "dealt" "by" target
+
+mana_value: mana_symbol+
+          | "X" "mana" "in" "any" "combination" "of" "colors"
+          | "an" "amount" "of" mana_symbol "equal" "to" expression
+          | "an" "additional" mana_symbol
+
+expression: digit
+          | "X"
+          | "the" "number" "of" card_description
+          | "the" "number" "of" card_description "you" "control"
+          | "the" "number" "of" card_description "in" location
+          | "the" "number" "of" counter_type "on" target
+          | "its" "power"
+          | "its" "toughness"
+          | "its" "mana" "value"
+          | "the" "sacrificed" card_type "'s" "mana" "value"
+          | "twice" "the" "number" "of" card_description
+          | "the" "amount" "of" "life" "you" "gained" "this" "turn"
+          | "the" "highest" "mana" "value" "among" card_description
+          | "the" "greatest" "toughness" "among" card_description
+
+quantity: "QUANTITY"
+        | digit
+        | "a"
+        | "an"
+        | "up" "to" digit
+        | "any" "number" "of"
+        | "each"
+        | "all"
+        | "X"
+        | "that" "many"
+        | "exactly" digit
+
+digit: "DIGIT" | /\d+/
+
+number_mod: "NUMBER_MOD"
+          | "or" "more"
+          | "or" "less"
+          | "or" "fewer"
+          | "more"
+          | "less"
+          | "fewer"
+
+possessive: "POSSESSIVE"
+          | "'s"
+          | "s'"
+
+energy: "ENERGY"
+
+d20_roll: "D20_ROLL"
+
+sub_text: "SUB_TEXT"
+
+%import common.WS
+%ignore WS

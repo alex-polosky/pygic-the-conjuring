@@ -1,0 +1,27 @@
+%import common.WS
+%ignore WS
+
+SUBTEXTKW: "additional"
+    | "and"
+    | "gain"
+    | "gains"
+    | "has"
+    | "have"
+    | "loses"
+    | "with"
+
+D_QUOTE: "\""
+S_QUOTE: "'"
+
+?start: (subtext_expr | TEXT)*
+
+subtext_expr: SUBTEXTKW quoted
+
+quoted: D_QUOTE dq_content D_QUOTE   -> double_quote
+    | S_QUOTE sq_content S_QUOTE   -> single_quote
+
+dq_content: ( subtext_expr | /[^"\r\n]+/ )*
+
+sq_content: /[^'\r\n]+/
+
+TEXT: /(?:(?!\b(?:additional|and|gain|gains|has|have|loses|with)\s*(?:"|'))[\s\S])+/
