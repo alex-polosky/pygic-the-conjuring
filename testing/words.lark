@@ -42,21 +42,29 @@ COUNT.1: _F"irst"
 TWICE       : "twice"
 ROUNDED.9   : "rounded " ("up" | "down")
 ALL         : _A"ll"
-NONE        : _N"one"
+NONE.9      : _N"one"
 BOTH        : "both"
-TOTAL       : "total"
+TOTAL       : "total" _PLURAL?
+DIFFERENCE  : "difference"
 EQUAL       : "equal"
 FEWER       : "fewer"
+GREATER     : "greater"
+GREATEST    : "greatest"
 HALF        : "half"
 HIGHEST     : "highest"
 LEAST       : "least"
 LESS        : "less"
+LESSER      : "lesser"
 LOWEST      : "lowest"
 MANY        : "many"
 MORE        : "more"
 MOST        : "most"
+MUCH        : "much"
 NUMBER      : "number"
 REST        : "rest"
+SAME        : "same"
+SEPERATE    : "seperate"
+SHARE       : "share" _PLURAL?
 THAN        : "than"
 TOP         : "top"
 BOTTOM      : "bottom"
@@ -67,6 +75,7 @@ Y           : "Y"
 
 MINUS       : "minus"
 PLUSW       : "plus"
+DIVIDE      : "divided"
 
 //_BATTLEFIELD.9: "battlefield"
 ZONE.9: "graveyard" _PLURAL?
@@ -92,7 +101,7 @@ _PHASE: ("attackers are declared"
         | "declare blockers"
         | "combat damage"
         | "cleanup") " step"
-PHASE: _PHASE _PLURAL?
+PHASE.9: _PHASE _PLURAL?
 A_PHASE: "that step"
     | "this step"
     | "step or phase"
@@ -138,7 +147,7 @@ INSTEAD     : "instead"
 MAY         : "may"
 MUST        : "must"
 OTHERWISE   : _O"therwise"
-RATHER      : "rather"
+RATHER      : _R"ather"
 UNLESS      : _U"nless"
 WITH        : "with"
 WITHOUT     : WITH "out"
@@ -170,17 +179,23 @@ AN          : _A"n"
 ANOTHER     : _A"nother"
 ANY         : _A"ny"
 AS          : _A"s"
+BACK        : "back"
+BEEN        : "been"
+DONE        : "done"
 EACH        : _E"ach"
 NO          : _N"o"
 ONLY        : _O"nly"
+ORDER       : "order"
 OTHER       : _O"ther"
+SO          : "so"
 THAT        : _T"hat" _POSSESSIVE?
 THIS        : _T"his"
 THE         : _T"he"
 THEY        : _T"hey"
 THEYRE      : _T"hey are" | _T"hey're"
-THEYVE      : "they have"
+THEYVE      : "they have" | "they've"
 THERE       : _T"here"
+THERES      : _T"here's"
 THEIR       : _T"heir"
 THOSE       : _T"hose"
 TO          : "to"
@@ -189,33 +204,37 @@ YOURE       : _Y"ou are" | _Y"ou're"
 YOUVE       : _Y"ou have" | _Y"ou've"
 YOUR        : _Y"our"
 UNDER       : "under"
+WHICH       : "which"
 WHO         : "who"
 
+NAME        : "name"
 NAMED       : _N"amed"
-CARD        : _C"ard" _PLURAL?
+CARD        : _C"ard" (_PLURAL | _POSSESSIVE)?
+EFFECT      : "effect" _PLURAL?
 DECK        : "deck"
 SPELL       : _S"pell" (_PLURAL | _POSSESSIVE)?
 TOKEN       : _T"oken" _PLURAL?
 ABILITYW    : _A"bility" _POSSESSIVE? | _A"bilities"
 TARGET      : _T"arget" (_PLURAL | "ed")?
-COMMANDER   : _C"ommander" _PLURAL?
+COMMANDER   : _C"ommander" (_PLURAL | _POSSESSIVE)?
 IT          : _I"t" (_PLURAL | _POSSESSIVE)?
 ITSELF      : "itself"
 THEM        : "them"
-SOURCE      : "source" _PLURAL?
-MANA        : _M"ana" (" value" _PLURAL?)?
+SOURCE      : "source" (_PLURAL | _POSSESSIVE)?
+MANA        : _M"ana" (" value" _PLURAL? | " symbol" _PLURAL?)?
 MANASYM     : _M"ana symbol"
 OPPONENT    : _O"pponent" (_PLURAL | _POSSESSIVE)?
 OWNER       : "owner" (_PLURAL | _POSSESSIVE)?
 PERMANENT   : _P"ermanent" (_PLURAL | _POSSESSIVE)?
-CONTROLLER  : "controller" _PLURAL?
-PLAYER.9    : _P"layer" (_PLURAL | _PLURAL "'" | _POSSESSIVE)?
+CONTROLLER  : "controller" (_PLURAL | _POSSESSIVE)?
+PLAYER.9    : _P"layer" (_PLURAL | _POSSESSIVE)?
 WHOSE       : "whose"
 STARTING    : _S"tarting"
 
+DIFFERENT   : "different" "ly"?
 EXACTLY     : "exactly"
 EXCEPT      : "except"
-FOR         : "for"
+FOR         : _F"or"
 FROM        : "from"
 OF          : "of"
 RANDOM      : "random"
@@ -224,6 +243,7 @@ UNSPENT     : "unspent"
 
 ADD         : _A"dd" _PLURAL?
 ADDITIONAL  : _A"ddition" "al"?
+ASSIGN      : _A"ssign" _PLURAL?
 ATTACK      : _A"ttack" (_PLURAL | "ed" | "ing")?
 BLOCK       : "block" ("ed" | "ing" | _PLURAL)?
 CHOOSE      : _C"hoose" _PLURAL?
@@ -237,26 +257,32 @@ DRAW        : _D"raw" _PLURAL?
 TAKE        : _T"ake" _PLURAL?
 BECOMES     : "become" _PLURAL?
 CONTROL     : _C"ontrol" (_PLURAL | "led")?
-GAIN        : "gain" (_PLURAL | "ed")?
+GAIN        : _G"ain" (_PLURAL | "ed")?
 GET         : "get" _PLURAL?
 DEAL        : "deal" | "deals" | "dealt" | "dealing"
 END         : _E"nd"
-REDUCE.9    : "reduce" | "reduced"
+REDUCE.9    : "reduce" _PLURAL? | "reduced"
 RETURN      : _R"eturn" _PLURAL? | _R"eturned"
 SWITCH      : _S"witch"
 ROLL        : _R"oll"
 RESOLVE     : _R"esolve" _PLURAL?
 ENTERS      : "enter" ("s" | "ed" |"ing")? (" the battlefield")?
-DIE         : "die" (_PLURAL | "d")?
+DIE         : "die" (_PLURAL | _POSSESSIVE | "d")?
 SKIP        : "skip" _PLURAL?
 SPEND       : "spend" | "spent"
 REMOVE      : _R"emove"
 REORDER     : _R"eorder"
 REPEAT      : _R"epeat"
 LEAVE       : "leave" _PLURAL?
-LOOK        : _L"ook"
+LOOK        : _L"ook" _PLURAL?
 MOVE        : _M"ove"
 PREVENT     : _P"revent"
+DISTRIBUTE  : _D"istribute"
+COUNTW      : _C"ount"
+CHOICE      : "choice"
+CHANGE      : _C"hange"
+CAUSE       : "cause" _PLURAL?
+SEPERATES   : "seperates"
 
 ABLE        : "able"
 ACTIVE      : _A"ctive" | _A"ctivating" | _A"ctivation"
@@ -276,15 +302,26 @@ NOTED       : "noted"
 LOST        : "lost"
 OWN         : "own" (_PLURAL | "ed")?
 PREVENTED   : "prevented"
+DRAWN       : "drawn"
+ENCOUNTER   : "encounter"
+CHOSEN      : "chosen"
+DYING       : "dying"
+DREW        : "drew"
+DECLARED    : "declared"
+CHOSE       : "chose" "n"?
+CHOOSING    : "choosing"
+ANTES       : "antes"
+NAMES       : "names"
 
 LIFE        : _L"ife"
 GAME        : _G"ame"
-TURN        : _T"urn" (_PLURAL | _POSSESSIVE)?
-DAMAGE      : "damage"
-POWER       : "power"
+TURN        : _T"urn" (_PLURAL | _POSSESSIVE | "ed")?
+DAMAGE      : _D"amage"
+POWER       : "power" _PLURAL?
 TOUGHNESSS  : "toughness"
 COMBATDAMAGE.9: "combat damage"
 TYPE        : "type" _PLURAL?
+TEXT        : "text"
 
 WIN         : _W"in" _PLURAL?
 WON         : "won"
@@ -293,6 +330,8 @@ LOSE        : _L"ose" _PLURAL?
 COST        : _C"ost" _PLURAL?
 PRODUCE     : "produce" ("d" | _PLURAL)?
 NXY_PT.8    : ((("-"|"+")?) (ZERO|WHOLE|"X"|"Y")) "/" ((("-"|"+")?) (ZERO|WHOLE|"X"|"Y"))
+COMBO       : "combination of" // Followed by mana pips, and/or, and, or, colors
+BASE        : "base"
 
 SUB_TEXT    : "SUB_TEXT_" /\d+/
 INNER_TEXT  : "INNER_TEXT_" /\d+/

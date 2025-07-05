@@ -1,4 +1,4 @@
-%import primitives (_A,_B,_C,_D,_E,_F,_G,_H,_I,_J,_K,_L,_M,_N,_O,_P,_Q,_R,_S,_T,_U,_V,_W,_X,_Y,_Z,HYPHEN)
+%import primitives (_A,_B,_C,_D,_E,_F,_G,_H,_I,_J,_K,_L,_M,_N,_O,_P,_Q,_R,_S,_T,_U,_V,_W,_X,_Y,_Z,HYPHEN, _PLURAL)
 
 IMPLICIT: /(\w| |-)+/ "—"
 
@@ -6,7 +6,7 @@ ABILITY.6: _A"ctivate" | _A"ctivated" | _A"ctivates"
     | _A"ttach" | _A"ttached" | _A"ttaches" | _U"nattach" | _U"nattached"
     | _B"ehold"
     | _C"ast" | _C"asting" | _C"asts"
-    | _C"ounter" | _C"ountered"
+    | _C"ounter" _PLURAL? | _C"ountered"
     | _C"reate" | _C"reated" | _C"reates"
     | _D"estroy" | _D"estroys" | _D"estroyed"
     | _D"iscard" | _D"iscarding" | _D"iscards" | _D"iscarded"
@@ -21,7 +21,7 @@ ABILITY.6: _A"ctivate" | _A"ctivated" | _A"ctivates"
     | _P"lay" | _P"laying" | _P"lays" | _P"layed"
     | _R"egenerate" | _R"egenerated" | _R"egenerates"
     | _R"eveal" | _R"eveals" | _R"evealed"
-    | _S"acrifice" | _S"acrificed" | _S"acrifices"
+    | _S"acrifice" | _S"acrificed" | _S"acrifices" | "sacrificing"
     | _S"cry" | _S"crying"
     | _S"earch" | _S"earching" | _S"earched" | _S"earches"
     | _S"huffle" | _S"huffles"

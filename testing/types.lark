@@ -48,7 +48,7 @@ _SUBTYPE_ENCHANTMENT: "Aura"
     | "Saga"
     | "Shard"
     | "Shrine"
-SUBTYPE_ENCHANTMENT.9: _SUBTYPE_ENCHANTMENT _PLURAL?
+SUBTYPE_ENCHANTMENT.6: _SUBTYPE_ENCHANTMENT _PLURAL?
 
 _SUBTYPE_BASICLAND: "Forest"
     | "Island"
@@ -576,7 +576,7 @@ COLOR.8: _M"onocolored"
     | _B"lack"
     | _R"ed"
     | _G"reen"
-    | "color" _PLURAL?
+    | "color" (_PLURAL | "ed")?
 
 ENERGY_COST: "{E}"
 TAP_COST   : "{T}"
