@@ -211,3 +211,5 @@ MARKER.9: ("+1/+1"
     | _W"inch"
     | _W"ind"
     | _W"ish") " counter" _PLURAL?
+    | "all counter" _PLURAL
+    | "counter" _PLURAL

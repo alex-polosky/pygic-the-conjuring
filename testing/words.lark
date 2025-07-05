@@ -1,5 +1,5 @@
 %import primitives (_A,_B,_C,_D,_E,_F,_G,_H,_I,_J,_K,_L,_M,_N,_O,_P,_Q,_R,_S,_T,_U,_V,_W,_X,_Y,_Z,_PLURAL,_POSSESSIVE)
-%import primitives (HYPHEN)
+%import primitives (HYPHEN, WHOLE, ZERO, PLUS)
 
 QUANTITY: _O"ne"
     | _T"wo"
@@ -47,13 +47,26 @@ BOTH        : "both"
 TOTAL       : "total"
 EQUAL       : "equal"
 FEWER       : "fewer"
+HALF        : "half"
+HIGHEST     : "highest"
+LEAST       : "least"
 LESS        : "less"
+LOWEST      : "lowest"
+MANY        : "many"
 MORE        : "more"
+MOST        : "most"
+NUMBER      : "number"
+REST        : "rest"
 THAN        : "than"
 TOP         : "top"
 BOTTOM      : "bottom"
 EXTRA       : "extra"
 UP          : _U"p"
+X           : "X"
+Y           : "Y"
+
+MINUS       : "minus"
+PLUSW       : "plus"
 
 //_BATTLEFIELD.9: "battlefield"
 ZONE.9: "graveyard" _PLURAL?
@@ -70,7 +83,8 @@ _PHASE: ("attackers are declared"
     | ("upkeep"
         | "combat") " step"?
     | ("combat"
-        | "main") " phase"
+        | "main"
+        | "this") " phase"
     | ("untap"
         | "end"
         | "draw"
@@ -86,6 +100,7 @@ A_PHASE: "that step"
 
 ALSO        : "also"
 AND         : "and"
+BEYOND      : "beyond"
 BUT         : "but"
 OR          : "or"
 AND_OR      : "and/or"
@@ -139,7 +154,9 @@ ONCE        : _O"nce"
 AFTER       : _A"fter"
 BEGINNING   : "beginning"
 DURING      : _D"uring"
+LAST        : "last"
 NEXT        : "next"
+PREVIOUSLY  : "previously"
 THEN        : _T"hen"
 TIME        : "time" _PLURAL?
 TRIGGER.9   : _T"rigger" (_PLURAL | "ed")?
@@ -148,6 +165,7 @@ UNTIL       : _U"ntil"
 WHILE       : _W"hile"
 
 A           : _A
+ALONE       : "alone"
 AN          : _A"n"
 ANOTHER     : _A"nother"
 ANY         : _A"ny"
@@ -185,17 +203,22 @@ IT          : _I"t" (_PLURAL | _POSSESSIVE)?
 ITSELF      : "itself"
 THEM        : "them"
 SOURCE      : "source" _PLURAL?
-MANA        : _M"ana" " value"?
+MANA        : _M"ana" (" value" _PLURAL?)?
 MANASYM     : _M"ana symbol"
 OPPONENT    : _O"pponent" (_PLURAL | _POSSESSIVE)?
+OWNER       : "owner" (_PLURAL | _POSSESSIVE)?
 PERMANENT   : _P"ermanent" (_PLURAL | _POSSESSIVE)?
+CONTROLLER  : "controller" _PLURAL?
 PLAYER.9    : _P"layer" (_PLURAL | _PLURAL "'" | _POSSESSIVE)?
+WHOSE       : "whose"
+STARTING    : _S"tarting"
 
 EXACTLY     : "exactly"
 EXCEPT      : "except"
 FOR         : "for"
 FROM        : "from"
 OF          : "of"
+RANDOM      : "random"
 THOUGH      : "though"
 UNSPENT     : "unspent"
 
@@ -213,7 +236,7 @@ UNTAP       : _U"ntap" _PLURAL?
 DRAW        : _D"raw" _PLURAL?
 TAKE        : _T"ake" _PLURAL?
 BECOMES     : "become" _PLURAL?
-CONTROL     : _C"ontrol" _PLURAL?
+CONTROL     : _C"ontrol" (_PLURAL | "led")?
 GAIN        : "gain" (_PLURAL | "ed")?
 GET         : "get" _PLURAL?
 DEAL        : "deal" | "deals" | "dealt" | "dealing"
@@ -227,6 +250,13 @@ ENTERS      : "enter" ("s" | "ed" |"ing")? (" the battlefield")?
 DIE         : "die" (_PLURAL | "d")?
 SKIP        : "skip" _PLURAL?
 SPEND       : "spend" | "spent"
+REMOVE      : _R"emove"
+REORDER     : _R"eorder"
+REPEAT      : _R"epeat"
+LEAVE       : "leave" _PLURAL?
+LOOK        : _L"ook"
+MOVE        : _M"ove"
+PREVENT     : _P"revent"
 
 ABLE        : "able"
 ACTIVE      : _A"ctive" | _A"ctivating" | _A"ctivation"
@@ -243,6 +273,9 @@ USE         : "use" | "using"
 STILL       : "still"
 INSTANCES   : "instances"
 NOTED       : "noted"
+LOST        : "lost"
+OWN         : "own" (_PLURAL | "ed")?
+PREVENTED   : "prevented"
 
 LIFE        : _L"ife"
 GAME        : _G"ame"
@@ -258,6 +291,8 @@ WON         : "won"
 LOSE        : _L"ose" _PLURAL?
 
 COST        : _C"ost" _PLURAL?
+PRODUCE     : "produce" ("d" | _PLURAL)?
+NXY_PT.8    : ((("-"|"+")?) (ZERO|WHOLE|"X"|"Y")) "/" ((("-"|"+")?) (ZERO|WHOLE|"X"|"Y"))
 
 SUB_TEXT    : "SUB_TEXT_" /\d+/
 INNER_TEXT  : "INNER_TEXT_" /\d+/

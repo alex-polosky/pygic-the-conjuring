@@ -55,9 +55,9 @@ with open(os.path.join(BASE_DIR, 'test-consume.txt'), 'w', encoding='utf-8') as 
         f.write('\n')
 
 with open(os.path.join(BASE_DIR, 'test-consume.json'), 'w', encoding='utf-8') as f:
-    json.dump({k: list(v) for k,v in missing_words.items()}, f, indent=4, sort_keys=True)
+    json.dump({k: list(missing_words[k]) for k in sorted(missing_words.keys(), key=str.casefold)}, f, indent=4)
 
-print(f'Tokenizing {good} / {total} : {((good / total) * 100):2.2f}%')
+print(f'Able to tokenize {good} / {total} : {((good / total) * 100):2.2f}%')
 print('')
 
 pass

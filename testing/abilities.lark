@@ -1,8 +1,8 @@
 %import primitives (_A,_B,_C,_D,_E,_F,_G,_H,_I,_J,_K,_L,_M,_N,_O,_P,_Q,_R,_S,_T,_U,_V,_W,_X,_Y,_Z,HYPHEN)
 
-IMPLICIT: /(\w| |-)+/ HYPHEN
+IMPLICIT: /(\w| |-)+/ "—"
 
-ABILITY.7: _A"ctivate" | _A"ctivated" | _A"ctivates"
+ABILITY.6: _A"ctivate" | _A"ctivated" | _A"ctivates"
     | _A"ttach" | _A"ttached" | _A"ttaches" | _U"nattach" | _U"nattached"
     | _B"ehold"
     | _C"ast" | _C"asting" | _C"asts"

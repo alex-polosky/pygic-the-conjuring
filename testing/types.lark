@@ -339,7 +339,7 @@ _SUBTYPE_CREATURE: "Time Lord"
     | "Noggle"
     | "Nomad"
     | "Nymph"
-    | "Octopus"
+    | "Octopus" | "Octopuses"
     | "Ogre"
     | "Ooze"
     | "Orb"
@@ -634,7 +634,8 @@ MANA_COST: "{C}"
 
 INVERT_TYPE.9: (_N"on" | _N"on-")
 
-PW_COST.8: "["? ((PLUS | HYPHEN) (WHOLE+ | "X") | ZERO) "]"?
+// PW_COST.7: /^/ "["? ((PLUS | HYPHEN) (WHOLE+ | "X") | ZERO) "]"?
+PW_COST.7: "["? ((PLUS | HYPHEN) (WHOLE+ | "X") | ZERO) "]"?
 
 cost: MANA_COST+ | ENERGY_COST+ | TAP_COST | UNTAP_COST | PW_COST
 
