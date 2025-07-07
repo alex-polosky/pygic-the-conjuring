@@ -1,4 +1,7 @@
 {
+    "\"": [
+        "Token('OTHER', 'other')"
+    ],
     "\"bands": [
         "Token('ALL', 'all')"
     ],
@@ -6,12 +9,14 @@
         "Token('THE', 'The')"
     ],
     "'s": [
-        "Token('SUBTYPE_CREATURE', 'Doctor')",
+        "Token('GAME', 'game')",
         "Token('SUBTYPE_PLANESWALKER', 'Urza')",
-        "Token('SUBTYPE_ENCHANTMENT', 'Aura')",
+        "Token('QUANTITY', 'One')",
         "Token('SUBTYPE_PLANESWALKER', 'Nissa')",
-        "Token('WHOLE', '1')",
-        "Token('SUBTYPE_CREATURE', 'Wall')"
+        "Token('SUBTYPE_ENCHANTMENT', 'Aura')",
+        "Token('SUBTYPE_CREATURE', 'Wall')",
+        "Token('SUBTYPE_CREATURE', 'Doctor')",
+        "Token('WHOLE', '1')"
     ],
     "[attacking]": [
         "Token('TARGET', 'target')"
@@ -22,13 +27,16 @@
     "[Human]": [
         "Token('TARGET', 'target')"
     ],
+    "[reveal": [
+        "Token('COMMA', ',')"
+    ],
     "[that": [
         "Token('SPELL', 'spell')"
     ],
     "[with": [
         "Token('CARD_TYPE', 'creature')",
-        "Token('IT', 'it')",
-        "Token('CARD_TYPE', 'creatures')"
+        "Token('CARD_TYPE', 'creatures')",
+        "Token('IT', 'it')"
     ],
     "[Wolf": [
         "Token('TARGET', 'target')"
@@ -42,14 +50,42 @@
     "[Your": [
         "Token('PERIOD', '.')"
     ],
+    "]": [
+        "Token('LESS', 'less')",
+        "Token('KEYWORD', 'flying')",
+        "Token('COMMA', ',')",
+        "Token('PERIOD', '.')",
+        "Token('CARD_TYPE', 'land')",
+        "Token('CONTROL', 'control')",
+        "Token('ZONE', 'hand')",
+        "Token('SUBTYPE_CREATURE', 'Werewolf')"
+    ],
     "bands": [
         "None"
     ],
+    "Behemoth": [
+        "None"
+    ],
     "bid": [
+        "None",
+        "Token('A', 'a')",
         "Token('MAY', 'may')"
+    ],
+    "bidder": [
+        "None"
+    ],
+    "bidding": [
+        "Token('THE', 'the')",
+        "Token('THE', 'The')"
+    ],
+    "Bladewing": [
+        "None"
     ],
     "blank": [
         "Token('EACH', 'each')"
+    ],
+    "blessing": [
+        "None"
     ],
     "Blocking": [
         "None"
@@ -57,17 +93,29 @@
     "Bold": [
         "Token('COMMA', ',')"
     ],
-    "bove.": [
+    "bove": [
         "Token('A', 'a')"
     ],
-    "Brallin,": [
+    "Brallin": [
         "Token('WITH', 'with')"
     ],
     "Brambleweft": [
         "Token('NAMED', 'named')"
     ],
-    "Bruna,": [
+    "Bride's": [
         "Token('NAMED', 'named')"
+    ],
+    "Brisela": [
+        "Token('TO', 'to')"
+    ],
+    "Bruna": [
+        "Token('NAMED', 'named')"
+    ],
+    "Burst": [
+        "None"
+    ],
+    "Businessperson": [
+        "None"
     ],
     "Butterfly": [
         "Token('NAMED', 'named')"
@@ -75,8 +123,24 @@
     "Caller": [
         "Token('COMMA', ',')"
     ],
+    "Cap": [
+        "None"
+    ],
+    "Celestial": [
+        "Token('COMMA', ',')"
+    ],
     "chaos": [
-        "Token('WHEN', 'Whenever')"
+        "Token('WHEN', 'Whenever')",
+        "None",
+        "Token('COMMA', ',')",
+        "Token('IF', 'If')",
+        "Token('OR', 'or')"
+    ],
+    "Chittering": [
+        "Token('TO', 'to')"
+    ],
+    "Chosen": [
+        "None"
     ],
     "City": [
         "Token('COMMA', ',')"
@@ -84,8 +148,26 @@
     "city's": [
         "Token('THE', 'the')"
     ],
+    "Coffin": [
+        "None"
+    ],
+    "coin": [
+        "Token('THE', 'the')",
+        "Token('A', 'a')",
+        "Token('WHOSE', 'whose')"
+    ],
+    "coins": [
+        "Token('BOTH', 'both')",
+        "Token('QUANTITY', 'two')",
+        "Token('PLAYER', \"players'\")"
+    ],
     "come": [
+        "None",
         "Token('OR', 'or')"
+    ],
+    "comes": [
+        "None",
+        "Token('IT', 'it')"
     ],
     "Command": [
         "Token('NAMED', 'named')"
@@ -96,24 +178,38 @@
     "committed": [
         "Token('YOUVE', \"you've\")"
     ],
-    "common.": [
+    "common": [
+        "Token('MOST', 'most')",
         "Token('IN', 'in')"
     ],
+    "contain": [
+        "Token('THAT', 'that')"
+    ],
     "contains": [
+        "Token('THAT', 'that')",
         "Token('ZONE', 'library')"
     ],
     "continuously": [
         "Token('SELF', '~')",
         "Token('CONTROL', 'controlled')"
     ],
-    "Cragflame,": [
+    "Cragflame": [
         "Token('ABILITY', 'create')"
+    ],
+    "creased": [
+        "Token('IN', 'in')"
+    ],
+    "crime": [
+        "Token('A', 'a')"
     ],
     "Crown": [
         "Token('NAMED', 'named')"
     ],
     "cry": [
         "Token('CARD_TYPE', 'Battle')"
+    ],
+    "cumulative": [
+        "Token('PAY', 'pay')"
     ],
     "Cumulative": [
         "None"
@@ -123,27 +219,27 @@
         "Token('YOU', 'you')"
     ],
     "cycled": [
+        "Token('WASNT', \"wasn't\")",
         "Token('YOUVE', \"you've\")",
         "Token('YOU', 'you')"
-    ],
-    "cycled,": [
-        "Token('WASNT', \"wasn't\")"
     ],
     "cycles": [
         "Token('PLAYER', 'player')"
     ],
     "d": [
         "Token('REMOVE', 'remove')",
-        "Token('RESOLVE', 'resolve')"
+        "Token('WIN', 'Win')",
+        "Token('USE', 'use')",
+        "Token('CHANGE', 'change')",
+        "Token('RESOLVE', 'resolve')",
+        "Token('COMPLETE', 'complete')"
     ],
-    "d,": [
-        "Token('REMOVE', 'remove')"
+    "d-out": [
+        "Token('KEYWORD', 'phase')"
     ],
     "d10": [
+        "Token('A', 'a')",
         "Token('QUANTITY', 'two')"
-    ],
-    "d10.": [
-        "Token('A', 'a')"
     ],
     "d12": [
         "Token('QUANTITY', 'two')"
@@ -151,30 +247,23 @@
     "d20": [
         "Token('A', 'a')"
     ],
-    "d20.": [
-        "Token('A', 'a')"
-    ],
     "d4": [
         "Token('A', 'a')",
         "Token('QUANTITY', 'two')"
     ],
-    "d4.": [
-        "Token('A', 'a')"
-    ],
     "d6": [
+        "Token('A', 'a')",
         "Token('QUANTITY', 'two')"
-    ],
-    "d6.": [
-        "Token('A', 'a')"
     ],
     "d8": [
+        "Token('A', 'a')",
         "Token('QUANTITY', 'two')"
     ],
-    "d8.": [
-        "Token('A', 'a')"
+    "dant": [
+        "Token('QUANTITY', 'ten')"
     ],
-    "d8:": [
-        "Token('A', 'a')"
+    "Darien": [
+        "None"
     ],
     "Dark": [
         "None"
@@ -183,13 +272,18 @@
         "Token('OF', 'of')"
     ],
     "day": [
-        "Token('WHEN', 'Whenever')"
+        "Token('WHEN', 'Whenever')",
+        "Token('BECOMES', 'becomes')",
+        "None"
     ],
     "Daybound": [
         "None"
     ],
     "Death": [
         "Token('COMMA', ',')"
+    ],
+    "Deceiver": [
+        "Token('THE', 'the')"
     ],
     "descended": [
         "Token('YOU', 'you')"
@@ -201,40 +295,59 @@
         "Token('YOUR', 'your')",
         "Token('YOUR', 'Your')"
     ],
-    "dice,": [
+    "dice": [
+        "Token('MANY', 'many')",
+        "None",
         "Token('MORE', 'more')"
+    ],
+    "direction": [
+        "Token('CHOSEN', 'chosen')",
+        "Token('THAT', 'that')"
+    ],
+    "divide": [
+        "Token('CAN', 'can')"
     ],
     "Do": [
         "Token('PERIOD', '.')"
     ],
     "dread": [
-        "Token('A', 'a')"
+        "Token('A', 'a')",
+        "Token('MORE', 'more')"
     ],
     "dvocate": [
         "Token('A', 'A')"
     ],
     "e": [
-        "Token('INVERT_TYPE', 'non')",
-        "Token('FOR', 'for')"
+        "Token('FOR', 'for')",
+        "Token('INVERT_TYPE', 'non')"
+    ],
+    "ed": [
+        "Token('ROLL', 'roll')",
+        "Token('ADD', 'add')"
     ],
     "either": [
-        "Token('ON', 'on')",
-        "Token('UNLESS', 'unless')"
-    ],
-    "either,": [
-        "Token('DOES', 'does')"
+        "Token('UNLESS', 'unless')",
+        "Token('DOES', 'does')",
+        "Token('ON', 'on')"
     ],
     "emblem": [
         "Token('AN', 'an')"
     ],
+    "Empires": [
+        "Token('OF', 'of')"
+    ],
     "Empyrial": [
         "Token('NAMED', 'named')"
     ],
-    "en.": [
+    "en": [
         "Token('SUBTYPE_CREATURE', 'Ox')"
     ],
+    "ensues": [
+        "None"
+    ],
     "er": [
-        "Token('SUBTYPE_PLANAR', 'Rath')"
+        "Token('SUBTYPE_PLANAR', 'Rath')",
+        "Token('ATTACK', 'attack')"
     ],
     "estcycling": [
         "Token('FOR', 'for')"
@@ -242,14 +355,11 @@
     "estwalk": [
         "Token('FOR', 'for')"
     ],
-    "estwalk.": [
-        "Token('FOR', 'for')"
-    ],
     "even": [
-        "Token('WITH', 'with')"
-    ],
-    "even.": [
-        "Token('IS', 'is')"
+        "Token('IS', 'is')",
+        "Token('WITH', 'with')",
+        "Token('EACH', 'each')",
+        "Token('OR', 'or')"
     ],
     "every": [
         "Token('ARE', 'are')",
@@ -258,51 +368,62 @@
     "everything": [
         "Token('FROM', 'from')"
     ],
-    "everything.": [
-        "Token('FROM', 'from')"
+    "excess": [
+        "Token('DEAL', 'deals')",
+        "Token('THE', 'the')",
+        "Token('DEAL', 'dealt')",
+        "Token('IN', 'in')",
+        "Token('IF', 'If')",
+        "Token('OF', 'of')"
     ],
     "Excess": [
         "Token('PERIOD', '.')"
     ],
-    "excess": [
-        "Token('IN', 'in')",
-        "Token('IF', 'If')",
-        "Token('DEAL', 'deals')",
-        "Token('DEAL', 'dealt')"
-    ],
     "exiling": [
         "Token('BY', 'by')"
+    ],
+    "expansion": [
+        "None"
     ],
     "Exterminate!": [
         "None"
     ],
     "face": [
-        "Token('CARD', 'card')",
-        "Token('IT', 'it')",
-        "Token('CARD_TYPE', 'creature')",
         "Token('TURN', 'turned')",
+        "Token('CARD', 'card')",
+        "Token('CARD_TYPE', 'creatures')",
+        "Token('WOULD', 'would')",
+        "Token('THEY', 'they')",
+        "Token('CARD_TYPE', 'creature')",
+        "Token('CONTROL', 'controls')",
         "Token('TURN', 'turns')",
         "Token('CONTROL', 'control')",
-        "Token('CONTROL', 'controls')",
-        "Token('WOULD', 'would')"
+        "Token('PERMANENT', 'permanent')",
+        "Token('IT', 'it')"
     ],
     "face-up": [
-        "Token('A', 'a')",
         "Token('QUANTITY', 'seven')",
-        "Token('TARGET', 'target')"
+        "Token('TARGET', 'target')",
+        "Token('A', 'a')"
     ],
     "faced": [
         "Token('HYPHEN', '-')"
     ],
-    "Festering": [
-        "Token('NAMED', 'named')",
-        "Token('WHEN', 'When')"
+    "far": [
+        "None"
     ],
-    "fewest,": [
+    "Festering": [
+        "Token('WHEN', 'When')",
+        "Token('NAMED', 'named')"
+    ],
+    "fewest": [
         "Token('THE', 'the')"
     ],
     "ffect": [
         "Token('A', 'a')"
+    ],
+    "Finery": [
+        "None"
     ],
     "finish": [
         "Token('PLAYER', 'players')"
@@ -314,38 +435,67 @@
         "Token('COMMA', ',')"
     ],
     "Flip": [
-        "Token('COLON', ':')",
+        "Token('PERIOD', '.')",
         "None",
-        "Token('PERIOD', '.')"
+        "Token('COLON', ':')"
     ],
     "flip": [
-        "Token('AND', 'and')",
+        "None",
         "Token('COMMA', ',')",
-        "Token('WOULD', 'would')",
         "Token('YOU', 'you')",
         "Token('MAY', 'may')",
-        "Token('EACH', 'each')"
+        "Token('THE', 'the')",
+        "Token('WOULD', 'would')",
+        "Token('INSTEAD', 'instead')",
+        "Token('EACH', 'each')",
+        "Token('A', 'a')",
+        "Token('AND', 'and')"
     ],
-    "flipped.": [
+    "flipped": [
         "Token('ZONE', 'battlefield')"
     ],
     "flips": [
+        "Token('THE', 'the')",
         "Token('PLAYER', 'player')"
     ],
+    "foe": [
+        "Token('EACH', 'Each')",
+        "Token('OR', 'or')"
+    ],
     "followed": [
+        "Token('COMMA', ',')",
         "Token('PHASE', 'combat phase')"
     ],
     "following": [
         "Token('THE', 'the')"
     ],
+    "foot": [
+        "Token('QUANTITY', 'one')"
+    ],
     "fought": [
         "Token('THAT', 'that')"
     ],
     "friend": [
-        "Token('CHOOSE', 'choose')"
+        "Token('CHOOSE', 'choose')",
+        "Token('EACH', 'Each')"
+    ],
+    "Fury": [
+        "None"
     ],
     "g": [
         "Token('IN', 'in')"
+    ],
+    "gan": [
+        "Token('BE', 'be')"
+    ],
+    "Garrison": [
+        "None"
+    ],
+    "Geist": [
+        "None"
+    ],
+    "Genesis": [
+        "Token('COMMA', ',')"
     ],
     "genious": [
         "Token('IN', 'In')"
@@ -356,8 +506,24 @@
     "gin": [
         "Token('BE', 'be')"
     ],
+    "give": [
+        "Token('COMMA', ',')"
+    ],
+    "Glass": [
+        "None"
+    ],
+    "Gown": [
+        "None"
+    ],
     "Grenades!": [
         "None"
+    ],
+    "Groom's": [
+        "Token('NAMED', 'named')"
+    ],
+    "guessed": [
+        "Token('OPPONENT', 'opponent')",
+        "Token('PLAYER', 'player')"
     ],
     "guesses": [
         "Token('OPPONENT', 'opponent')",
@@ -367,17 +533,21 @@
         "None",
         "Token('AS', 'As')"
     ],
-    "Haldan,": [
+    "Haldan": [
         "Token('WITH', 'with')"
     ],
-    "Halvar,": [
+    "Halvar": [
         "Token('NAMED', 'named')"
     ],
-    "Hammer:": [
+    "Hammer": [
         "Token('SELF', \"~'s\")"
     ],
     "Hanweir": [
+        "Token('TO', 'to')",
         "Token('NAMED', 'named')"
+    ],
+    "Harrier": [
+        "None"
     ],
     "having": [
         "Token('FOR', 'for')"
@@ -385,48 +555,96 @@
     "Hazoret": [
         "Token('COLON', ':')"
     ],
+    "heads": [
+        "Token('UP', 'up')"
+    ],
+    "height": [
+        "Token('A', 'a')"
+    ],
     "Hellkite": [
         "Token('NAMED', 'named')"
+    ],
+    "Helm": [
+        "Token('AND', 'and')"
     ],
     "her": [
         "Token('COMMA', ',')"
     ],
-    "historic": [
-        "Token('A', 'a')",
-        "Token('ATTACK', 'attacking')",
-        "Token('EACH', 'Each')",
-        "Token('TARGET', 'target')"
-    ],
-    "historic,": [
-        "Token('WAS', 'was')"
-    ],
-    "how": [
-        "Token('CHOOSE', 'choose')",
-        "Token('CHOOSE', 'chooses')"
-    ],
-    "I,": [
+    "Herald": [
         "None"
     ],
-    "identity.": [
-        "Token('COLOR', 'color')"
+    "high": [
+        "Token('THE', 'the')",
+        "Token('THE', 'The')"
     ],
-    "identity:": [
+    "higher": [
+        "Token('OR', 'or')"
+    ],
+    "hip": [
+        "Token('SUBTYPE_LAND', 'Towns')"
+    ],
+    "historic": [
+        "Token('WAS', 'was')",
+        "None",
+        "Token('TARGET', 'target')",
+        "Token('A', 'a')",
+        "Token('EACH', 'Each')",
+        "Token('ATTACK', 'attacking')"
+    ],
+    "Hivis": [
+        "Token('AND', 'and')",
+        "Token('CONTROL', 'control')"
+    ],
+    "Homelands": [
+        "Token('THE', 'the')"
+    ],
+    "Host": [
+        "None"
+    ],
+    "how": [
+        "Token('CHOOSE', 'chooses')",
+        "Token('CHOOSE', 'choose')"
+    ],
+    "I": [
+        "None"
+    ],
+    "identity": [
         "Token('COLOR', 'color')"
     ],
     "iginally": [
         "Token('OR', 'or')"
     ],
     "ignore": [
-        "Token('TO', 'to')"
+        "Token('TO', 'to')",
+        "Token('AND', 'and')"
     ],
-    "II,": [
+    "II": [
         "None"
     ],
-    "ire,": [
+    "III": [
+        "None"
+    ],
+    "illegal": [
+        "Token('BECOMES', 'becomes')"
+    ],
+    "ire": [
         "Token('SUBTYPE_CREATURE', 'Gods')"
+    ],
+    "IV": [
+        "None"
     ],
     "just": [
         "Token('ZONE', 'library')"
+    ],
+    "Kaldra": [
+        "Token('ABILITY', 'create')",
+        "Token('OF', 'of')"
+    ],
+    "Karox": [
+        "Token('ABILITY', 'create')"
+    ],
+    "Keep": [
+        "None"
     ],
     "Keeper": [
         "Token('NAMED', 'named')"
@@ -435,35 +653,38 @@
         "Token('OF', 'of')"
     ],
     "kicked": [
-        "Token('A', 'a')",
-        "Token('COUNT', 'first')"
-    ],
-    "kicked,": [
         "Token('WAS', 'was')",
-        "Token('WASNT', \"wasn't\")"
-    ],
-    "kicked.": [
-        "Token('WAS', 'was')"
+        "Token('ABILITY', 'cast')",
+        "Token('COUNT', 'first')",
+        "Token('WASNT', \"wasn't\")",
+        "Token('A', 'a')"
     ],
     "kicks": [
         "Token('PLAYER', 'player')"
     ],
     "kind": [
+        "Token('AND', 'and')",
         "Token('EACH', 'each')",
         "Token('THAT', 'that')"
     ],
     "King": [
-        "Token('ABILITY', 'Sacrifice')",
-        "Token('ON', 'on')"
+        "Token('ON', 'on')",
+        "Token('ABILITY', 'Sacrifice')"
     ],
-    "Lantern.": [
+    "Lantern": [
         "Token('SELF', \"~'s\")"
+    ],
+    "Law": [
+        "Token('OF', 'of')"
+    ],
+    "Leader": [
+        "None"
     ],
     "left": [
         "Token('CHOOSE', 'choose')",
-        "Token('CONTROL', 'controlled')",
         "Token('CHOOSE', 'Choose')",
-        "Token('THAT', 'that')"
+        "Token('THAT', 'that')",
+        "Token('CONTROL', 'controlled')"
     ],
     "legend": [
         "None"
@@ -472,11 +693,12 @@
         "Token('NAMED', 'named')"
     ],
     "lethal": [
+        "Token('UNLESS', 'unless')",
         "Token('BY', 'by')"
     ],
     "Level": [
-        "Token('COLON', ':')",
-        "None"
+        "None",
+        "Token('COLON', ':')"
     ],
     "LEVEL": [
         "None"
@@ -484,6 +706,9 @@
     "level": [
         "Token('BECOMES', 'becomes')",
         "Token('WITH', 'with')"
+    ],
+    "Light": [
+        "Token('KEYWORD', 'Fading')"
     ],
     "Living": [
         "None"
@@ -495,21 +720,31 @@
     "longer": [
         "Token('NO', 'no')"
     ],
+    "Lord": [
+        "Token('SUBTYPE_CREATURE', 'Vampire')",
+        "Token('SUBTYPE_PLANAR', 'Time')"
+    ],
     "Lord's": [
         "Token('SUBTYPE_PLANAR', 'Time')"
     ],
-    "Lord,": [
-        "Token('SUBTYPE_CREATURE', 'Vampire')"
-    ],
-    "Lord.": [
-        "Token('SUBTYPE_PLANAR', 'Time')"
+    "Loyal": [
+        "None"
     ],
     "loyalty": [
-        "Token('A', 'a')",
         "Token('CARD_TYPE', \"planeswalkers'\")",
+        "Token('A', 'a')",
         "Token('OR', 'or')"
     ],
     "Loyalty": [
+        "None"
+    ],
+    "ly": [
+        "Token('COMPLETE', 'complete')"
+    ],
+    "lyst": [
+        "Token('A', 'a')"
+    ],
+    "Mage": [
         "None"
     ],
     "Magic": [
@@ -522,7 +757,8 @@
         "Token('CANT', \"can't\")"
     ],
     "marked": [
-        "Token('DAMAGE', 'damage')"
+        "Token('DAMAGE', 'damage')",
+        "Token('IS', 'is')"
     ],
     "Markov's": [
         "Token('SELF', '~')"
@@ -535,6 +771,7 @@
     ],
     "maximum": [
         "Token('OPPONENT', \"opponent's\")",
+        "None",
         "Token('NO', 'no')",
         "Token('YOUR', 'Your')"
     ],
@@ -543,6 +780,9 @@
     ],
     "Megamorph": [
         "None"
+    ],
+    "Metal": [
+        "Token('OF', 'of')"
     ],
     "Mice": [
         "Token('OTHER', 'Other')"
@@ -553,43 +793,38 @@
     "Mightstone": [
         "Token('THE', 'The')"
     ],
+    "Mind-Mage": [
+        "None"
+    ],
+    "mode": [
+        "None"
+    ],
     "Modified": [
         "None"
     ],
     "monarch": [
         "Token('THE', 'the')",
+        "Token('NO', 'no')",
         "Token('THE', 'The')"
     ],
     "monarch's": [
         "Token('THE', 'the')"
     ],
-    "monarch,": [
-        "Token('THE', 'the')",
-        "Token('NO', 'no')"
-    ],
-    "monarch.": [
-        "Token('THE', 'the')"
-    ],
     "mong": [
         "Token('A', 'a')"
     ],
-    "monstrous,": [
-        "Token('BECOMES', 'becomes')"
+    "monstrous": [
+        "Token('BECOMES', 'becomes')",
+        "Token('IS', 'is')"
     ],
     "mount": [
         "Token('A', 'a')"
     ],
-    "mount.": [
-        "Token('A', 'a')"
-    ],
     "mountainwalk": [
+        "Token('HAVE', 'have')",
         "Token('WITH', 'with')",
-        "Token('GAIN', 'gains')"
-    ],
-    "mountainwalk.": [
         "Token('HAS', 'has')",
-        "Token('WITH', 'with')",
-        "Token('HAVE', 'have')"
+        "Token('GAIN', 'gains')"
     ],
     "Mu": [
         "Token('NAMED', 'named')"
@@ -615,11 +850,14 @@
     "Nature's": [
         "Token('COMMA', ',')"
     ],
-    "nder,": [
+    "nder": [
         "Token('BE', 'be')"
     ],
     "nearest": [
         "Token('THE', 'the')"
+    ],
+    "neath": [
+        "Token('BE', 'be')"
     ],
     "neither": [
         "Token('IT', \"it's\")",
@@ -633,12 +871,11 @@
     "Nicol": [
         "Token('NAMED', 'named')"
     ],
-    "night,": [
-        "Token('IT', \"it's\")"
-    ],
-    "night.": [
+    "night": [
+        "Token('IT', \"it's\")",
         "Token('BECOMES', 'becomes')",
-        "Token('IT', \"it's\")"
+        "None",
+        "Token('OR', 'or')"
     ],
     "Nightbound": [
         "None"
@@ -646,7 +883,10 @@
     "ns": [
         "Token('SUBTYPE_PLANAR', 'Phyrexia')"
     ],
-    "Oathsworn,": [
+    "Nurgle": [
+        "Token('OF', 'of')"
+    ],
+    "Oathsworn": [
         "Token('THE', 'the')"
     ],
     "odd": [
@@ -657,27 +897,15 @@
         "Token('YOUR', 'your')"
     ],
     "out": [
-        "Token('KEYWORD', 'phases')"
-    ],
-    "out,": [
-        "Token('KEYWORD', 'phases')"
-    ],
-    "out.": [
         "Token('KEYWORD', 'phase')",
         "Token('KEYWORD', 'phases')"
     ],
     "outlaw": [
-        "Token('TARGET', 'target')",
-        "Token('COMMA', ',')",
         "Token('INVERT_TYPE', 'non-')",
+        "Token('COMMA', ',')",
         "Token('ANOTHER', 'another')",
-        "Token('AN', 'an')"
-    ],
-    "outlaw,": [
-        "Token('AN', 'an')"
-    ],
-    "outlaw.": [
-        "Token('AN', 'an')"
+        "Token('AN', 'an')",
+        "Token('TARGET', 'target')"
     ],
     "outlaws": [
         "Token('FOR', 'for')"
@@ -685,17 +913,47 @@
     "outside": [
         "Token('FROM', 'from')"
     ],
+    "over": [
+        "Token('TURN', 'turns')"
+    ],
+    "Overlord": [
+        "None"
+    ],
     "paired": [
-        "Token('IT', \"it's\")"
+        "Token('IT', \"it's\")",
+        "Token('IS', 'is')"
+    ],
+    "Paladin": [
+        "None"
+    ],
+    "Paragon": [
+        "None"
     ],
     "part": [
         "Token('AS', 'as')"
     ],
-    "party.": [
+    "party": [
         "Token('YOUR', 'your')"
     ],
     "peace": [
-        "Token('CHOSE', 'chose')"
+        "Token('CHOSE', 'chose')",
+        "Token('OR', 'or')"
+    ],
+    "pile": [
+        "None",
+        "Token('FACEDOWN', 'face-down')",
+        "Token('THAT', 'that')",
+        "Token('THE', 'the')",
+        "Token('CHOSEN', 'chosen')",
+        "Token('QUANTITY', 'one')"
+    ],
+    "piles": [
+        "Token('THEIR', 'their')",
+        "Token('CHOSEN', 'chosen')",
+        "Token('THOSE', 'those')",
+        "Token('OTHER', 'other')",
+        "Token('QUANTITY', 'two')",
+        "Token('QUANTITY', 'three')"
     ],
     "ping": [
         "Token('TAP', 'tap')"
@@ -704,67 +962,75 @@
         "Token('NAMED', 'named')"
     ],
     "plainswalk": [
+        "Token('HAVE', 'have')",
         "Token('WITH', 'with')"
-    ],
-    "plainswalk.": [
-        "Token('HAVE', 'have')"
     ],
     "planar": [
         "Token('THE', 'the')",
+        "Token('MANY', 'many')",
         "Token('YOUR', 'your')",
         "Token('MORE', 'more')"
     ],
     "point": [
         "Token('EACH', 'each')"
     ],
-    "poisoned,": [
-        "Token('IS', 'is')"
-    ],
-    "poisoned.": [
+    "poisoned": [
+        "Token('ARE', 'are')",
         "Token('IS', 'is')"
     ],
     "postcombat": [
         "Token('YOUR', 'your')"
     ],
     "Power": [
-        "Token('NAMED', 'named')"
+        "Token('NAMED', 'named')",
+        "Token('AND', 'and')"
+    ],
+    "pply": [
+        "Token('A', 'a')"
     ],
     "precombat": [
-        "Token('NEXT', 'next')",
         "Token('PLAYER', \"player's\")",
-        "Token('YOUR', 'your')"
+        "Token('YOUR', 'your')",
+        "Token('NEXT', 'next')"
     ],
     "Prince": [
         "Token('NAMED', 'named')"
     ],
+    "printed": [
+        "None"
+    ],
+    "proceeding": [
+        "Token('AND', 'and')"
+    ],
     "process": [
+        "None",
         "Token('THIS', 'this')"
     ],
-    "process.": [
-        "Token('THIS', 'this')"
-    ],
-    "protect.": [
+    "protect": [
         "Token('THEY', 'they')"
     ],
     "protects": [
-        "Token('OPPONENT', 'opponent')"
-    ],
-    "protects.": [
+        "Token('OPPONENT', 'opponent')",
         "Token('PLAYER', 'player')"
     ],
-    "Pyrogenius,": [
+    "Pyrogenius": [
         "Token('COMMA', ',')"
     ],
+    "Pyromancer": [
+        "None"
+    ],
     "quality": [
-        "Token('CHOSEN', 'chosen')"
+        "Token('CHOSEN', 'chosen')",
+        "Token('THAT', 'that')"
     ],
-    "quality.": [
-        "Token('CHOSEN', 'chosen')"
+    "r": [
+        "Token('NO', 'no')"
     ],
-    "radiation.": [
+    "radiation": [
         "Token('FROM', 'from')"
     ],
-    "Ragavan,": [
+    "Ragavan": [
+        "Token('PERIOD', '.')",
         "Token('ABILITY', 'create')"
     ],
     "Rakdos": [
@@ -773,52 +1039,118 @@
     "Rashka": [
         "Token('COMMA', ',')"
     ],
+    "rcanist": [
+        "Token('A', 'A')"
+    ],
+    "rchangel": [
+        "Token('A', 'A')"
+    ],
     "rchitect": [
         "Token('A', 'A')"
+    ],
+    "received": [
+        "Token('OPPONENT', 'opponent')",
+        "Token('YOU', 'you')"
+    ],
+    "recent": [
+        "Token('MOST', 'most')"
+    ],
+    "recently": [
+        "Token('MOST', 'most')"
     ],
     "Regal": [
         "Token('COMMA', ',')"
     ],
+    "remain": [
+        "Token('THEY', 'they')",
+        "Token('CARD', 'cards')"
+    ],
+    "remains": [
+        "Token('CARD', 'card')",
+        "None",
+        "Token('IT', 'it')",
+        "Token('SELF', '~')"
+    ],
+    "replacing": [
+        "Token('BY', 'by')"
+    ],
     "reselect": [
+        "Token('COMMA', ',')",
         "Token('MAY', 'may')"
+    ],
+    "result": [
+        "None",
+        "Token('THAT', 'that')",
+        "Token('THE', 'the')",
+        "Token('QUANTITY', 'one')",
+        "Token('OTHER', 'other')",
+        "Token('A', 'a')"
+    ],
+    "results": [
+        "Token('THOSE', 'those')"
     ],
     "Reverse": [
         "Token('COLON', ':')"
     ],
-    "Rhoda,": [
+    "Rhoda": [
         "Token('WITH', 'with')"
+    ],
+    "Rider": [
+        "None"
+    ],
+    "right": [
+        "Token('YOUR', 'your')",
+        "Token('OR', 'or')"
     ],
     "Ring": [
         "Token('THE', 'the')"
     ],
+    "Ring-bearer": [
+        "Token('YOUR', 'your')"
+    ],
+    "rmor": [
+        "Token('A', 'a')"
+    ],
     "Round": [
         "Token('PERIOD', '.')"
     ],
+    "rs": [
+        "Token('KEYWORD', 'Scavenge')"
+    ],
+    "rtisan": [
+        "Token('A', 'A')"
+    ],
+    "Rubinia": [
+        "Token('AND', 'and')",
+        "Token('CONTROL', 'control')"
+    ],
+    "rule": [
+        "None"
+    ],
+    "rule\"": [
+        "None"
+    ],
     "s": [
+        "Token('END', 'end')",
+        "Token('KEYWORD', 'Fear')",
+        "Token('KEYWORD', 'Storm')",
         "Token('ZONE', 'ante')",
-        "Token('NAME', 'name')"
+        "Token('NAME', 'name')",
+        "Token('DECK', 'deck')"
     ],
-    "s,": [
-        "Token('NAME', 'name')"
-    ],
-    "s:": [
-        "Token('NAME', 'name')"
-    ],
-    "Sam,": [
+    "Sam": [
         "Token('WITH', 'with')"
     ],
     "same": [
         "Token('THE', 'the')",
         "Token('THE', 'The')"
     ],
-    "same.": [
-        "Token('THE', 'the')"
-    ],
     "Savage": [
         "Token('COMMA', ',')"
     ],
     "Scepter": [
-        "Token('NAMED', 'named')"
+        "Token('NAMED', 'named')",
+        "Token('AND', 'and')"
     ],
     "Scheming": [
         "Token('COMMA', ',')"
@@ -830,12 +1162,12 @@
         "Token('COMMA', ',')"
     ],
     "secretly": [
-        "Token('COMMA', ',')",
-        "Token('PLAYER', 'player')"
+        "Token('PLAYER', 'player')",
+        "Token('COMMA', ',')"
     ],
     "Separate": [
-        "Token('COLON', ':')",
-        "None"
+        "None",
+        "Token('COLON', ':')"
     ],
     "separate": [
         "Token('COMMA', ',')",
@@ -843,18 +1175,22 @@
     ],
     "separates": [
         "Token('OPPONENT', 'opponent')",
-        "Token('AND', 'and')",
-        "Token('PLAYER', 'player')"
+        "Token('PLAYER', 'player')",
+        "Token('AND', 'and')"
     ],
     "share": [
         "Token('DOESNT', \"doesn't\")",
         "Token('THEY', 'they')",
-        "Token('THAT', 'that')"
+        "Token('THAT', 'that')",
+        "Token('ALL', 'all')"
     ],
     "shares": [
-        "Token('IT', 'it')",
         "Token('PERMANENT', 'permanent')",
+        "Token('IT', 'it')",
         "Token('THAT', 'that')"
+    ],
+    "Shield": [
+        "Token('AND', 'and')"
     ],
     "Shimatsu": [
         "Token('PERIOD', '.')"
@@ -866,31 +1202,37 @@
         "Token('PLAYER', 'player')"
     ],
     "Simultaneously": [
-        "None"
-    ],
-    "Simultaneously,": [
+        "Token('PERIOD', '.')",
         "None"
     ],
     "since": [
+        "None",
         "Token('CONTROL', 'controlled')"
     ],
     "single": [
         "Token('A', 'a')"
     ],
+    "size": [
+        "Token('ZONE', 'hand')"
+    ],
     "Skip": [
         "Token('PERIOD', '.')",
         "None"
     ],
+    "Skyshark": [
+        "None"
+    ],
+    "Smasher": [
+        "None"
+    ],
     "so": [
+        "Token('DO', 'do')",
         "Token('YOU', 'you')"
     ],
-    "so.": [
-        "Token('DO', 'do')"
-    ],
-    "Sovereign,": [
+    "Sovereign": [
         "Token('SUBTYPE_CREATURE', 'Sphinx')"
     ],
-    "Sparkmage,": [
+    "Sparkmage": [
         "Token('LESS', 'less')"
     ],
     "Spend": [
@@ -913,21 +1255,33 @@
     "stance": [
         "Token('IN', 'in')"
     ],
-    "Strategist,": [
+    "stands": [
+        "None"
+    ],
+    "start": [
+        "Token('YOU', 'You')"
+    ],
+    "Strategist": [
         "Token('SUBTYPE_SPELL', 'Arcane')"
+    ],
+    "subgame": [
+        "Token('THE', 'the')",
+        "None"
     ],
     "swampwalk": [
         "Token('SEMICOLON', ';')",
-        "Token('WITH', 'with')",
         "Token('GAIN', 'gains')",
+        "Token('HAVE', 'have')",
+        "Token('HAS', 'has')",
+        "Token('WITH', 'with')",
         "Token('SUPERTYPE', 'Snow')"
     ],
-    "swampwalk.": [
-        "Token('HAS', 'has')"
-    ],
     "Sword": [
-        "Token('COMMA', ',')",
-        "Token('NAMED', 'named')"
+        "Token('NAMED', 'named')",
+        "Token('COMMA', ',')"
+    ],
+    "tails": [
+        "Token('UP', 'up')"
     ],
     "Tarmogoyf": [
         "Token('A', 'a')"
@@ -938,25 +1292,47 @@
     "teammates": [
         "Token('YOUR', 'your')"
     ],
+    "tempted": [
+        "Token('HAS', 'has')"
+    ],
+    "tempts": [
+        "None"
+    ],
     "text": [
         "Token('THE', 'the')"
+    ],
+    "Thinking": [
+        "Token('NAMED', 'named')"
     ],
     "thirst": [
         "Token('SUBTYPE_ARTIFACT', 'Blood')"
     ],
+    "Thralls": [
+        "Token('OF', 'of')"
+    ],
+    "Throne": [
+        "Token('AND', 'and')"
+    ],
     "tied": [
         "Token('ARE', 'are')",
+        "Token('IS', 'is')",
         "Token('OR', 'or')",
-        "Token('IS', 'is')"
+        "Token('COLOR', 'color')"
     ],
     "ting": [
         "Token('PUT', 'put')"
     ],
-    "travel.": [
+    "tiquities": [
+        "Token('AN', 'An')"
+    ],
+    "travel": [
         "Token('SUBTYPE_PLANAR', 'Time')"
     ],
-    "Trickster,": [
+    "Trickster": [
         "Token('THE', 'the')"
+    ],
+    "true": [
+        "Token('IS', 'is')"
     ],
     "tween": [
         "Token('BE', 'be')"
@@ -964,67 +1340,112 @@
     "Twin": [
         "Token('NAMED', 'named')"
     ],
+    "uches": [
+        "Token('TO', 'to')"
+    ],
     "umbra": [
         "Token('HAVE', 'have')"
     ],
     "Umbra": [
         "None"
     ],
-    "Urami,": [
+    "Urami": [
         "Token('ABILITY', 'Create')"
+    ],
+    "V": [
+        "None"
+    ],
+    "value": [
+        "None"
     ],
     "Vecna": [
         "Token('NAMED', 'named')"
     ],
-    "Vitu-Ghazi.": [
+    "venger": [
+        "Token('A', 'A')"
+    ],
+    "Viashivan": [
         "Token('NAMED', 'named')"
     ],
-    "Voyager,": [
+    "vid": [
+        "Token('A', 'A')"
+    ],
+    "villainous": [
+        "Token('A', 'a')"
+    ],
+    "Vitu-Ghazi": [
+        "Token('NAMED', 'named')"
+    ],
+    "Voice": [
+        "None"
+    ],
+    "Voyager": [
         "Token('LESS', 'less')"
     ],
     "walk": [
-        "Token('CARD_TYPE', 'land')",
-        "Token('SUBTYPE_BASICLAND', 'Mountain')",
         "Token('SUBTYPE_BASICLAND', 'Swamp')",
-        "Token('SUBTYPE_BASICLAND', 'Island')",
-        "Token('SUBTYPE_LAND', 'Desert')",
+        "Token('SUBTYPE_BASICLAND', 'Forest')",
         "Token('CARD_TYPE', 'planes')",
+        "Token('CARD_TYPE', 'land')",
         "Token('SUBTYPE_BASICLAND', 'Plains')",
-        "Token('SUBTYPE_BASICLAND', 'Forest')"
+        "Token('SUBTYPE_LAND', 'Desert')",
+        "Token('SUBTYPE_BASICLAND', 'Mountain')",
+        "Token('SUBTYPE_BASICLAND', 'Island')"
     ],
-    "walk,": [
-        "Token('CARD_TYPE', 'planes')",
-        "Token('SUBTYPE_BASICLAND', 'Swamp')"
-    ],
-    "walk.": [
-        "Token('CARD_TYPE', 'land')"
+    "walks": [
+        "Token('CARD_TYPE', 'planes')"
     ],
     "war": [
         "Token('CHOSE', 'chose')",
         "Token('CHOOSE', 'chooses')"
     ],
-    "Wasp.": [
+    "Wasp": [
         "Token('NAMED', 'named')"
     ],
-    "Wastes.": [
+    "Wastes": [
         "Token('NAMED', 'named')"
+    ],
+    "Weakstone": [
+        "Token('AND', 'and')"
+    ],
+    "weapon": [
+        "None"
+    ],
+    "whether": [
+        "None"
     ],
     "which": [
-        "Token('FOR', 'for')"
+        "Token('FOR', 'for')",
+        "None"
     ],
-    "Wood.": [
+    "whichever": [
+        "None",
+        "Token('COMMA', ',')"
+    ],
+    "Wielder": [
+        "None"
+    ],
+    "Wirefly": [
         "Token('NAMED', 'named')"
     ],
-    "Wood:": [
+    "Wood": [
         "Token('NAMED', 'named')"
     ],
-    "word.": [
+    "word": [
         "Token('COLOR', 'color')"
     ],
     "words": [
         "Token('COLOR', 'color')"
     ],
     "Worker": [
-        "Token('SUBTYPE_LAND', 'Mine')"
+        "Token('SUBTYPE_LAND', 'Tower')",
+        "Token('SUBTYPE_LAND', 'Mine')",
+        "Token('SUBTYPE_CREATURE', 'Plant')"
+    ],
+    "Writhing": [
+        "Token('THE', 'the')"
+    ],
+    "wrong": [
+        "None"
     ]
 }
