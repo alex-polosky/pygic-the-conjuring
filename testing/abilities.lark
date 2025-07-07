@@ -2,6 +2,8 @@
 
 IMPLICIT: /(\w| |-)+/ "—"
 
+// ABILITY_.8: _P"laneswalk" | _P"laneswalks"
+
 ABILITY.6: _A"ctivate" | _A"ctivated" | _A"ctivates"
     | _A"ttach" | _A"ttached" | _A"ttaches" | _U"nattach" | _U"nattached"
     | _B"ehold"
@@ -31,7 +33,6 @@ ABILITY.6: _A"ctivate" | _A"ctivated" | _A"ctivates"
     | _C"onvert"
     | _F"ateseal"
     | _C"lash"
-    | _P"laneswalk" | _P"laneswalks"
     | _S"et in "_M"otion"
     | _A"bandon"
     | _P"roliferate"

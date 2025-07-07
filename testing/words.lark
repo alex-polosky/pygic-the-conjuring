@@ -312,6 +312,7 @@ CHOSE       : "chose" "n"?
 CHOOSING    : "choosing"
 ANTES       : "antes"
 NAMES       : "names"
+PHASEDOUT   : "phased-out"
 
 LIFE        : _L"ife"
 GAME        : _G"ame"
@@ -322,6 +323,7 @@ TOUGHNESSS  : "toughness"
 COMBATDAMAGE.9: "combat damage"
 TYPE        : "type" _PLURAL?
 TEXT        : "text"
+LOYALTIES   : "loyalty " ("ability" | "abilities")
 
 WIN         : _W"in" _PLURAL?
 WON         : "won"

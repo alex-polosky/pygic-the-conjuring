@@ -1,5 +1,7 @@
 %import primitives (_A,_B,_C,_D,_E,_F,_G,_H,_I,_J,_K,_L,_M,_N,_O,_P,_Q,_R,_S,_T,_U,_V,_W,_X,_Y,_Z)
 
+// KEYWORD_: 
+
 KEYWORD.7: _D"eathtouch"
     | _D"efender"
     | _D"ouble "_S"trike"
@@ -89,7 +91,7 @@ KEYWORD.7: _D"eathtouch"
     | _R"ebound"
     | _U"mbra Armor"
     | _I"nfect"
-    | _B"attle Cry"
+    | _B"attle "_C"ry"
     | _L"iving Weapon"
     | _U"ndying"
     | _M"iracle"
