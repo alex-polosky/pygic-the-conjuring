@@ -105,9 +105,15 @@ def handle_bad_tokens(expr: str, ex: UnexpectedCharacters):
 
     word = expr[ex.pos_in_stream:end_pos]
     if word not in missing_words:
-        missing_words[word] = set()
+        # missing_words[word] = set()
+        missing_words[word] = dict()
 
-    missing_words[word].add(repr(prior_token))
+    if prior_token not in missing_words[word]:
+        missing_words[word][prior_token] = 0
+
+    missing_words[word][prior_token] += 1
+
+    # missing_words[word].add(repr(prior_token))
 
     if not end_pos:
         return
@@ -137,8 +143,12 @@ with open(os.path.join(BASE_DIR, 'testing', 'test-consume.txt'), 'w', encoding='
 
         f.write('\n')
 
+for k0, v0 in missing_words.items():
+    for k1, v1 in v0.items():
+        pass
+
 with open(os.path.join(BASE_DIR, 'testing', 'test-consume.json'), 'w', encoding='utf-8') as f:
-    json.dump({k: list(missing_words[k]) for k in sorted(missing_words.keys(), key=str.casefold)}, f, indent=4)
+    json.dump({k: (missing_words[k]) for k in sorted(missing_words.keys(), key=str.casefold)}, f, indent=4)
 
 print(f'Lines able to tokenize {good} / {total} : {((good / total) * 100):2.2f}%')
 print(f'Recognized tokens {len(got_words)} / {len(got_words) + len(missing_words)} : {(len(got_words) / (len(got_words) + len(missing_words)) * 100):2.2f}%')
