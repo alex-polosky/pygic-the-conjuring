@@ -42,6 +42,8 @@ COUNT.1: _F"irst"
 TWICE       : "twice"
 ROUNDED.9   : "rounded " ("up" | "down")
 ALL         : _A"ll"
+AMONG       : "among"
+AMOUNT      : "amount"
 NONE.9      : _N"one"
 BOTH        : "both"
 TOTAL       : "total" _PLURAL?
@@ -65,6 +67,7 @@ REST        : "rest"
 SAME        : "same"
 SEPERATE    : "seperate"
 SHARE       : "share" _PLURAL?
+SINGLE      : "single"
 THAN        : "than"
 TOP         : "top"
 BOTTOM      : "bottom"
@@ -115,35 +118,36 @@ OR          : "or"
 AND_OR      : "and/or"
 NOT         : "not"
 
-ARE         : "are"
-ARENT       : "are not" | "aren't"
+ARE.1       : "are"
+ARENT.2     : "are not" | "aren't"
 CAN         : "can"
 CANT        : "can't" | CAN NOT | CAN " " NOT// | CAN WS_INLINE NOT
-COULD       : "could"
-COULDNT     : "could not" | "couldn't"
-DID         : "did"
-DIDNT       : "did not" | "didn't"
-DOES        : "does"
-DOESNT      : "does not" | "doesn't"
-DO          : "do"
-DONT        : "do not" | "don't"
-HAD         : "had"
-HADNT       : "had not" | "hadn't"
-HAVE        : "have"
-HAVENT      : "have not" | "haven't"
-HAS         : "has"
-HASNT       : "has not" | "hasn't"
-IS          : "is"
-ISNT        : "is not" | "isn't"
-WAS         : "was"
-WASNT       : "was not" | "wasn't"
-WERE        : "were"
-WERENT      : "were not" | "weren't"
+COULD.1     : "could"
+COULDNT.2   : "could not" | "couldn't"
+DID.1       : "did"
+DIDNT.2     : "did not" | "didn't"
+DOES.1      : "does"
+DOESNT.2    : "does not" | "doesn't"
+DO.1        : "do"
+DONT.2      : "do not" | "don't"
+HAD.1       : "had"
+HADNT.2     : "had not" | "hadn't"
+HAVE.1      : "have"
+HAVENT.2    : "have not" | "haven't"
+HAS.1       : "has"
+HASNT.2     : "has not" | "hasn't"
+IS.1        : "is"
+ISNT.2      : "is not" | "isn't"
+WAS.1       : "was"
+WASNT.2     : "was not" | "wasn't"
+WERE.1      : "were"
+WERENT.2    : "were not" | "weren't"
 WHERE       : "where"
 
 ALREADY     : "already"
 IF          : _I"f"
 INSTEAD     : "instead"
+LONGER      : "longer"
 MAY         : "may"
 MUST        : "must"
 OTHERWISE   : _O"therwise"
@@ -164,6 +168,7 @@ AFTER       : _A"fter"
 BEGINNING   : "beginning"
 DURING      : _D"uring"
 LAST        : "last"
+LONG        : "long"
 NEXT        : "next"
 PREVIOUSLY  : "previously"
 THEN        : _T"hen"
@@ -183,6 +188,7 @@ BACK        : "back"
 BEEN        : "been"
 DONE        : "done"
 EACH        : _E"ach"
+NEW         : "new"
 NO          : _N"o"
 ONLY        : _O"nly"
 ORDER       : "order"
@@ -250,10 +256,10 @@ CHOOSE      : _C"hoose" _PLURAL?
 COMPLETE    : _C"omplete"
 COPY        : _C"opy"
 PAY         : _P"ay" | _P"ays" | _P"aid"
-PUT         : _P"ut" (_PLURAL | "ing")?
+PUT         : _P"ut" (_PLURAL | "ting")?
 TAP         : _T"ap" _PLURAL?
 UNTAP       : _U"ntap" _PLURAL?
-DRAW        : _D"raw" _PLURAL?
+DRAW.1      : _D"raw" _PLURAL?
 TAKE        : _T"ake" _PLURAL?
 BECOMES     : "become" _PLURAL?
 CONTROL     : _C"ontrol" (_PLURAL | "led")?
@@ -269,7 +275,7 @@ RESOLVE     : _R"esolve" _PLURAL?
 ENTERS      : "enter" ("s" | "ed" |"ing")? (" the battlefield")?
 DIE         : "die" (_PLURAL | _POSSESSIVE | "d")?
 SKIP        : "skip" _PLURAL?
-SPEND       : "spend" | "spent"
+SPEND       : _S"pend" | "spent"
 REMOVE      : _R"emove"
 REORDER     : _R"eorder"
 REPEAT      : _R"epeat"
@@ -283,6 +289,9 @@ CHOICE      : "choice"
 CHANGE      : _C"hange"
 CAUSE       : "cause" _PLURAL?
 SEPERATES   : "seperates"
+ANTES       : "antes"
+NAMES       : "names"
+REMAINS     : "remains"
 
 ABLE        : "able"
 ACTIVE      : _A"ctive" | _A"ctivating" | _A"ctivation"
@@ -302,7 +311,7 @@ NOTED       : "noted"
 LOST        : "lost"
 OWN         : "own" (_PLURAL | "ed")?
 PREVENTED   : "prevented"
-DRAWN       : "drawn"
+DRAWN.2     : "drawn"
 ENCOUNTER   : "encounter"
 CHOSEN      : "chosen"
 DYING       : "dying"
@@ -310,9 +319,9 @@ DREW        : "drew"
 DECLARED    : "declared"
 CHOSE       : "chose" "n"?
 CHOOSING    : "choosing"
-ANTES       : "antes"
-NAMES       : "names"
-PHASEDOUT   : "phased-out"
+PHASEDOUT.9 : "phased-out"
+PHASESOUT.9 : "phases out" | "phase out"
+KICKED      : "kicked"
 
 LIFE        : _L"ife"
 GAME        : _G"ame"
@@ -334,6 +343,15 @@ PRODUCE     : "produce" ("d" | _PLURAL)?
 NXY_PT.8    : ((("-"|"+")?) (ZERO|WHOLE|"X"|"Y")) "/" ((("-"|"+")?) (ZERO|WHOLE|"X"|"Y"))
 COMBO       : "combination of" // Followed by mana pips, and/or, and, or, colors
 BASE        : "base"
+
+// Stuff I can't figure out due to complexities
+KW_WALK.9   : ("land"
+    | "Desert"
+    | "Forest"
+    | "Island"
+    | "Mountain"
+    | "Plains"
+    | "Swamp") "walk"
 
 SUB_TEXT    : "SUB_TEXT_" /\d+/
 INNER_TEXT  : "INNER_TEXT_" /\d+/

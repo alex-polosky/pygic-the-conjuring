@@ -234,9 +234,6 @@
         "complete": 4,
         "Win": 1
     },
-    "d-out": {
-        "phase": 1
-    },
     "d10": {
         "a": 1,
         "two": 1
@@ -589,7 +586,7 @@
     "historic": {
         "a": 16,
         "attacking": 1,
-        "null": 1,
+        "among": 1,
         "Each": 1,
         "target": 2,
         "was": 1
@@ -655,13 +652,6 @@
     "Kher": {
         "of": 2
     },
-    "kicked": {
-        "cast": 2,
-        "a": 6,
-        "was": 115,
-        "wasn't": 2,
-        "first": 1
-    },
     "kicks": {
         "player": 1
     },
@@ -715,13 +705,6 @@
     },
     "Living": {
         "null": 1
-    },
-    "long": {
-        "as": 291,
-        "As": 253
-    },
-    "longer": {
-        "no": 5
     },
     "Lord": {
         "Time": 1,
@@ -808,15 +791,9 @@
     "monarch's": {
         "the": 1
     },
-    "mong": {
-        "a": 307
-    },
     "monstrous": {
         "is": 3,
         "becomes": 10
-    },
-    "mount": {
-        "a": 78
     },
     "mountainwalk": {
         "gains": 3,
@@ -834,8 +811,7 @@
         "named": 2
     },
     "n": {
-        "Phyrexia": 28,
-        "draw": 14
+        "Phyrexia": 28
     },
     "n't": {
         "you have": 7,
@@ -851,6 +827,9 @@
     "nder": {
         "be": 1
     },
+    "ne": {
+        "do": 1
+    },
     "nearest": {
         "the": 2
     },
@@ -860,11 +839,6 @@
     "neither": {
         "you": 1,
         "it's": 1
-    },
-    "new": {
-        "choose": 59,
-        "The": 3,
-        "a": 6
     },
     "Nicol": {
         "named": 1
@@ -893,10 +867,6 @@
     },
     "opening": {
         "your": 6
-    },
-    "out": {
-        "phases": 17,
-        "phase": 6
     },
     "outlaw": {
         "an": 4,
@@ -1063,12 +1033,6 @@
         "cards": 1,
         "they": 2
     },
-    "remains": {
-        "~": 22,
-        "it": 11,
-        "null": 2,
-        "card": 4
-    },
     "replacing": {
         "by": 5
     },
@@ -1191,9 +1155,6 @@
         "null": 2,
         "controlled": 1
     },
-    "single": {
-        "a": 30
-    },
     "size": {
         "hand": 17
     },
@@ -1212,10 +1173,6 @@
     },
     "Sparkmage": {
         "less": 1
-    },
-    "Spend": {
-        ".": 70,
-        "null": 2
     },
     "spiring": {
         "In": 1
@@ -1294,9 +1251,6 @@
         "are": 4,
         "or": 4
     },
-    "ting": {
-        "put": 21
-    },
     "tiquities": {
         "An": 1
     },
@@ -1358,14 +1312,8 @@
         "less": 1
     },
     "walk": {
-        "land": 20,
         "Desert": 1,
-        "Forest": 1,
-        "planes": 11,
-        "Island": 1,
-        "Mountain": 1,
-        "Plains": 1,
-        "Swamp": 2
+        "planes": 11
     },
     "walks": {
         "planes": 1
