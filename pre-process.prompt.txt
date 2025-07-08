@@ -1,8 +1,0 @@
-I need a lark grammar that can pre-process some lines for me. I have some lines that have inner quotes that are itself other lines that need to be processed. I need to be able to extract them.
-
-This is an example:
-```
-Whenever Totentanz, Swarm Piper or another nontoken creature you control dies, create a 1/1 black Rat creature token with "This creature can't block." -> ["Whenever Totentanz, Swarm Piper or another nontoken creature you control dies, create a 1/1 black Rat creature token with SUB_LINE", "This creature can't block."]
-When Heroes of the Revel enters the battlefield, create a 1/1 red Satyr creature token with \"This creature can't block.\" -> ["When Heroes of the Revel enters the battlefield, create a 1/1 red Satyr creature token with SUB_LINE" , "This creature can't block."]
-You get an emblem with "Islands you control have '{T}: Draw a card.'" -> ["You get an emblem with SUB_LINE", "Islands you control have SUB_LINE", "{T}: Draw a card."]
-```
