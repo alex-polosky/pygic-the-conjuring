@@ -46,6 +46,7 @@ AMONG       : "among"
 AMOUNT      : "amount"
 NONE.9      : _N"one"
 BOTH        : "both"
+COMMON      : "common"
 TOTAL       : "total" _PLURAL?
 DIFFERENCE  : "difference"
 EQUAL       : "equal"
@@ -165,6 +166,7 @@ ON          : _O"n"
 ONCE        : _O"nce"
 
 AFTER       : _A"fter"
+BEGAN       : "began"
 BEGINNING   : "beginning"
 DURING      : _D"uring"
 LAST        : "last"
@@ -185,6 +187,7 @@ ANOTHER     : _A"nother"
 ANY         : _A"ny"
 AS          : _A"s"
 BACK        : "back"
+BEING       : "being"
 BEEN        : "been"
 DONE        : "done"
 EACH        : _E"ach"
@@ -253,9 +256,9 @@ ASSIGN      : _A"ssign" _PLURAL?
 ATTACK      : _A"ttack" (_PLURAL | "ed" | "ing")?
 BLOCK       : "block" ("ed" | "ing" | _PLURAL)?
 CHOOSE      : _C"hoose" _PLURAL?
-COMPLETE    : _C"omplete"
+COMPLETE    : _C"omplete" "d"?
 COPY        : _C"opy"
-PAY         : _P"ay" | _P"ays" | _P"aid"
+PAY         : _P"ay" | _P"ays" | _P"aid" | "paying"
 PUT         : _P"ut" (_PLURAL | "ting")?
 TAP         : _T"ap" _PLURAL?
 UNTAP       : _U"ntap" _PLURAL?
@@ -271,12 +274,12 @@ REDUCE.9    : "reduce" _PLURAL? | "reduced"
 RETURN      : _R"eturn" _PLURAL? | _R"eturned"
 SWITCH      : _S"witch"
 ROLL        : _R"oll"
-RESOLVE     : _R"esolve" _PLURAL?
+RESOLVE     : _R"esolve" ("d" | _PLURAL)?
 ENTERS      : "enter" ("s" | "ed" |"ing")? (" the battlefield")?
 DIE         : "die" (_PLURAL | _POSSESSIVE | "d")?
 SKIP        : "skip" _PLURAL?
 SPEND       : _S"pend" | "spent"
-REMOVE      : _R"emove"
+REMOVE      : _R"emove" "d"?
 REORDER     : _R"eorder"
 REPEAT      : _R"epeat"
 LEAVE       : "leave" _PLURAL?
@@ -286,17 +289,20 @@ PREVENT     : _P"revent"
 DISTRIBUTE  : _D"istribute"
 COUNTW      : _C"ount"
 CHOICE      : "choice"
-CHANGE      : _C"hange"
+CHANGE      : _C"hange" "d"?
 CAUSE       : "cause" _PLURAL?
 SEPERATES   : "seperates"
 ANTES       : "antes"
 NAMES       : "names"
 REMAINS     : "remains"
+FLIP        : _F"lip"
+CYCLE       : "cycle" "d"?
 
 ABLE        : "able"
 ACTIVE      : _A"ctive" | _A"ctivating" | _A"ctivation"
 COPIES      : "copies"
 IN          : _I"n"
+INTO        : "into"
 DEFENDING   : "defending"
 TAPPED      : _T"apped"
 UNTAPPED    : _U"ntapped"
@@ -304,7 +310,7 @@ FACEDOWN.8  : _F"ace" (" " | HYPHEN) "down"
 MODIFIED    : "modified"
 WAY         : "way"
 UNBLOCKED   : "unblocked"
-USE         : "use" | "using"
+USE         : "use" | "using" | "used"
 STILL       : "still"
 INSTANCES   : "instances"
 NOTED       : "noted"
@@ -323,6 +329,10 @@ PHASEDOUT.9 : "phased-out"
 PHASESOUT.9 : "phases out" | "phase out"
 KICKED      : "kicked"
 
+ACTIVATING  : "activating"
+CHAOS       : "chaos ensues"
+TURNING     : "turning"
+
 LIFE        : _L"ife"
 GAME        : _G"ame"
 TURN        : _T"urn" (_PLURAL | _POSSESSIVE | "ed")?
@@ -333,6 +343,15 @@ COMBATDAMAGE.9: "combat damage"
 TYPE        : "type" _PLURAL?
 TEXT        : "text"
 LOYALTIES   : "loyalty " ("ability" | "abilities")
+FACE        : "face" "d"?
+COIN        : "coin"
+DEVOTION    : "devotion"
+HANDSIZE    : "hand size"
+PROCESS     : "process"
+MONARCH     : "monarch"
+BLESSING    : _T"he city's blessing"
+HISTORIC    : "historic"
+PILE        : "pile" _PLURAL?
 
 WIN         : _W"in" _PLURAL?
 WON         : "won"
@@ -346,12 +365,12 @@ BASE        : "base"
 
 // Stuff I can't figure out due to complexities
 KW_WALK.9   : ("land"
-    | "Desert"
-    | "Forest"
-    | "Island"
-    | "Mountain"
-    | "Plains"
-    | "Swamp") "walk"
+    | _D"esert"
+    | _F"orest"
+    | _I"sland"
+    | _M"ountain"
+    | _P"lains"
+    | _S"wamp") "walk"
 
 SUB_TEXT    : "SUB_TEXT_" /\d+/
 INNER_TEXT  : "INNER_TEXT_" /\d+/
