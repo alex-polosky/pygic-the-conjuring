@@ -125,7 +125,7 @@ def main():
 
     good = 0
     total = 0
-    with open(os.path.join(BASE_DIR, 'testing', 'test-consume.txt'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(BASE_DIR, 'data', 'out', 'analyze-tokens-result.txt'), 'w', encoding='utf-8') as f:
         for data in pp_data:
             f.write(data + '\n')
             total += 1
@@ -146,11 +146,34 @@ def main():
         for k1, v1 in v0.items():
             pass
 
-    with open(os.path.join(BASE_DIR, 'testing', 'test-consume.json'), 'w', encoding='utf-8') as f:
-        json.dump({k: (missing_words[k]) for k in sorted(missing_words.keys(), key=str.casefold)}, f, indent=4)
+    def get_max_value(nested_dict):
+        if not nested_dict:
+            return 0
+        return max(nested_dict.values())
+
+    # data_by_key = {k: (missing_words[k]) for k in sorted(missing_words.keys(), key=str.casefold)}
+    data_by_key = dict(sorted(missing_words.items(), key=lambda x: str.casefold(x[0])))
+    data_by_num = dict(sorted(missing_words.items(), key=lambda x: get_max_value(x[1]), reverse=True))
+
+    with open(os.path.join(BASE_DIR, 'data', 'out', 'analyze-tokens-result-missing.json'), 'w', encoding='utf-8') as f:
+        json.dump(data_by_key, f, indent=4)
+
+    with open(os.path.join(BASE_DIR, 'data', 'out', 'analyze-tokens-result-missing-byweight.json'), 'w', encoding='utf-8') as f:
+        json.dump(data_by_num, f, indent=4)
 
     print(f'Lines able to tokenize {good} / {total} : {((good / total) * 100):2.2f}%')
     print(f'Recognized tokens {len(got_words)} / {len(got_words) + len(missing_words)} : {(len(got_words) / (len(got_words) + len(missing_words)) * 100):2.2f}%')
+    print('')
+
+    print("Top 10 keys sorted by highest nested value:")
+    print("-" * 50)
+    for i, (key, nested_dict) in enumerate(data_by_num.items()):
+        if i >= 10:
+            break
+        max_val = get_max_value(nested_dict)
+        max_key = max(nested_dict.keys(), key=lambda k: nested_dict[k])
+        print(f"{i+1:2d}. {key:<15} | Max value: {max_val:3d} (key: '{max_key}')")
+
     print('')
 
 if __name__ == '__main__':
