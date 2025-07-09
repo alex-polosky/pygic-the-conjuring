@@ -78,7 +78,7 @@ def main():
     grammar = create_grammar()
     parser = Lark(grammar, import_paths=[BASE_DIR, os.path.join(BASE_DIR, 'grammar')], parser='lalr', debug=True)
 
-    with open(os.path.join(BASE_DIR, 'data', 'oracle_only.sorted.txt'), encoding='utf-8') as f:
+    with open(os.path.join(BASE_DIR, 'data', 'other', 'oracle_only.sorted.txt'), encoding='utf-8') as f:
         test_data = f.read()
 
 

@@ -10,10 +10,10 @@ ab_search = r'701\.\d+\. (.*)'
 # TODO: implement ripping out abilities from magic rules
 
 if __name__ == '__main__':
-    with open(os.path.join(BASE_DIR, 'data', 'abilities.txt'), encoding='utf-8') as f:
+    with open(os.path.join(BASE_DIR, 'data', 'lib', 'abilities.txt'), encoding='utf-8') as f:
         text = f.read()
 
-    with open(os.path.join(BASE_DIR, 'data', 'oracle_only.sorted.txt'), encoding='utf-8') as f:
+    with open(os.path.join(BASE_DIR, 'data', 'other', 'oracle_only.sorted.txt'), encoding='utf-8') as f:
         oracle = f.read()
 
     abilities = re.findall(ab_search, text)
@@ -48,7 +48,7 @@ if __name__ == '__main__':
             found_exts[ab] = set()
         found_exts[ab].add(ext)
 
-    with open(os.path.join(BASE_DIR, 'out', 'abilities.lark'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(BASE_DIR, 'data', 'out', 'abilities.lark'), 'w', encoding='utf-8') as f:
         f.write('%import primitives (_A,_B,_C,_D,_E,_F,_G,_H,_I,_J,_K,_L,_M,_N,_O,_P,_Q,_R,_S,_T,_U,_V,_W,_X,_Y,_Z)\n\n')
         f.write('ABILITY: ')
         first_line = True

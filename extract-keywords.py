@@ -8,10 +8,10 @@ kw_search = r'702\.\d+\. (.*)'
 # TODO: implement checking existing keyword defs to warn about new defs that we've found?
 
 if __name__ == '__main__':
-    with open(os.path.join(BASE_DIR, 'data', 'keywords.txt'), encoding='utf-8') as f:
+    with open(os.path.join(BASE_DIR, 'data', 'lib', 'keywords.txt'), encoding='utf-8') as f:
         text = f.read()
 
-    with open(os.path.join(BASE_DIR, 'data', 'oracle_only.sorted.txt'), encoding='utf-8') as f:
+    with open(os.path.join(BASE_DIR, 'data', 'other', 'oracle_only.sorted.txt'), encoding='utf-8') as f:
         oracle = f.read()
 
     keywords = re.findall(kw_search, text)
@@ -51,7 +51,7 @@ if __name__ == '__main__':
             found_exts[kw] = set()
         found_exts[kw].add(ext)
 
-    with open(os.path.join(BASE_DIR, 'out', 'keywords.lark'), 'w', encoding='utf-8') as f:
+    with open(os.path.join(BASE_DIR, 'data', 'out', 'keywords.lark'), 'w', encoding='utf-8') as f:
         f.write('%import primitives (_A,_B,_C,_D,_E,_F,_G,_H,_I,_J,_K,_L,_M,_N,_O,_P,_Q,_R,_S,_T,_U,_V,_W,_X,_Y,_Z)\n\n')
         f.write('KEYWORDS: ')
         first_line = True

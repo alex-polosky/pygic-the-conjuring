@@ -5,7 +5,7 @@ import urllib.parse
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 URL = 'https://magic.wizards.com/en/rules'
-OUT = os.path.join(BASE_DIR, 'data')
+OUT = os.path.join(BASE_DIR, 'data', 'lib')
 
 
 def get_html():
