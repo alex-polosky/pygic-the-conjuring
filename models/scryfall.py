@@ -40,7 +40,15 @@ def auto_convert_nested(cls):
                 if field_container in (dict, _ImmutableDict):
                     instance = field_container(**{field_type[0](k): field_type[1](v) for k,v in value.items()})
                 elif hasattr(field_type, '__dataclass_fields__'):
-                    instance = field_container([field_type(**item) for item in value])
+                    field_names = [field.name for field in fields(field_type)]
+                    instance = field_container([
+                        field_type(**{
+                            k:v
+                            for k,v in item.items()
+                            if k in field_names
+                        })
+                        for item in value
+                    ])
                 elif field_container in (set, tuple, list):
                     instance = field_container([x for x in value])
                 else:
@@ -48,8 +56,11 @@ def auto_convert_nested(cls):
             elif field_type == date:
                 instance = datetime.strptime(value, '%Y-%m-%d').date()
             elif field_type:
-                if isinstance(value, dict) or hasattr(field_type, '__dataclass_fields__'):
+                if isinstance(value, dict):
                     instance = field_type(**value)
+                elif hasattr(field_type, '__dataclass_fields__'):
+                    field_names = [field.name for field in fields(field_type)]
+                    instance = field_type(**{k:v for k,v in value.items() if k in field_names})
                 else:
                     instance = field_type(value)
             else:
@@ -135,8 +146,6 @@ class Card:
 @auto_convert_nested
 @dataclass(frozen=True)
 class CardGameplay:
-    cmc: Decimal
-    '''The mana value of this card'''
     color_identity: Tuple[str]
     '''This card's color identity'''
     keywords: Tuple[str]
@@ -145,6 +154,8 @@ class CardGameplay:
     '''An object describing the legality of this card across play formats'''
     name: str
     '''The name of this card. If this card has multiple faces, this field will contain both names separated by ␣//␣'''
+    cmc: Optional[Decimal] = None
+    '''The mana value of this card'''
     type_line: Optional[str] = None
     '''The type line of this card'''
     oracle_text: Optional[str] = None

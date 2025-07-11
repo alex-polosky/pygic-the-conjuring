@@ -18,7 +18,7 @@ def main():
     for i, card_json in enumerate(data):
         if i and i % 1_000 == 0:
             print(f'Loaded {i} cards: {i/total*100:0.2f}%')
-        card = ScryfallCard(card_json)
+        card = ScryfallCard(**card_json)
         if card.set not in sets:
             sets[card.set] = []
         id_ = str(card.oracle_id)
