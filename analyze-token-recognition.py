@@ -75,13 +75,16 @@ def create_grammar():
 
 def main():
 
+    print('Creating grammar...')
     grammar = create_grammar()
+    print('Creating parser...')
     parser = Lark(grammar, import_paths=[BASE_DIR, os.path.join(BASE_DIR, 'grammar')], parser='lalr', debug=True)
 
-    with open(os.path.join(BASE_DIR, 'data', 'other', 'oracle_only.sorted.txt'), encoding='utf-8') as f:
+    print('Loading oracle data...')
+    with open(os.path.join(BASE_DIR, 'data', 'out', 'oracle-text.txt'), encoding='utf-8') as f:
         test_data = f.read()
 
-
+    print('Pre-processing full oracle data...')
     pp_data = [
         x
             for y in preprocess(test_data)
@@ -89,6 +92,8 @@ def main():
     ]
     got_words = []
     missing_words = {}
+
+    print(f'Discovered {len(pp_data)} total lines of oracle text')
 
     def handle_bad_tokens(expr: str, ex: UnexpectedCharacters):
         if ex.token_history:
@@ -126,7 +131,9 @@ def main():
     good = 0
     total = 0
     with open(os.path.join(BASE_DIR, 'data', 'out', 'analyze-tokens-result.txt'), 'w', encoding='utf-8') as f:
-        for data in pp_data:
+        for i, data in enumerate(pp_data):
+            if i and i % 1_000 == 0:
+                print(f'Gone through {i} lines: {i/len(pp_data)*100:0.2f}%')
             f.write(data + '\n')
             total += 1
 

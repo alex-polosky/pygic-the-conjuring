@@ -11,7 +11,7 @@ if __name__ == '__main__':
     with open(os.path.join(BASE_DIR, 'data', 'lib', 'keywords.txt'), encoding='utf-8') as f:
         text = f.read()
 
-    with open(os.path.join(BASE_DIR, 'data', 'other', 'oracle_only.sorted.txt'), encoding='utf-8') as f:
+    with open(os.path.join(BASE_DIR, 'data', 'out', 'oracle-text.txt'), encoding='utf-8') as f:
         oracle = f.read()
 
     keywords = re.findall(kw_search, text)
