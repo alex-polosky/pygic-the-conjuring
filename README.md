@@ -18,9 +18,17 @@ Also, it'd be cool to use the compiled MTG code to find combos or interactions. 
 
 ## Current metrics
 
-Tokenizing 93.3% of all oracle text lines
+`Planeswalk` and `Phyrexian` have been included with rules; they accounted for ~150 line mismatches. That only resulted in an extra .01% of lines and .68% of tokens. It's slow progress
 
-Recognizing 79.1% of all tokens
+Latest:
+
+- Lines able to tokenize 28367 / 30209 : 93.90%
+- Recognized tokens 3433 / 4303 : 79.78%
+
+Previous:
+
+- Tokenizing 93.3% of all oracle text lines
+- Recognizing 79.1% of all tokens
 
 ## Scripts and doing things
 

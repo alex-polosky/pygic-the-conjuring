@@ -297,6 +297,7 @@ NAMES       : "names"
 REMAINS     : "remains"
 FLIP        : _F"lip"
 CYCLE       : "cycle" "d"?
+PLANESWALK.7: _P"laneswalk"
 
 ABLE        : "able"
 ACTIVE      : _A"ctive" | _A"ctivating" | _A"ctivation"
@@ -352,6 +353,7 @@ MONARCH     : "monarch"
 BLESSING    : _T"he city's blessing"
 HISTORIC    : "historic"
 PILE        : "pile" _PLURAL?
+EMBLEM      : "emblem"
 
 WIN         : _W"in" _PLURAL?
 WON         : "won"

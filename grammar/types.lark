@@ -464,7 +464,7 @@ _SUBTYPE_CREATURE: "Time Lord"
     | "Zubera"
 SUBTYPE_CREATURE.7: _SUBTYPE_CREATURE _PLURAL?
 
-SUBTYPE_PLANAR.9: "The Abyss"
+SUBTYPE_PLANAR.6: "The Abyss"
     | "Alara"
     | "Alfava Metraxis"
     | "Amonkhet"
