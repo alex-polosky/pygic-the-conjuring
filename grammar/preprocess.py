@@ -133,9 +133,10 @@ if __name__ == '__main__':
 # 'When enchanted creature dies, return that card to the battlefield under your control with a +1/+1 counter on it.',
 # 'Tap target land and gain 40 life.',
 # "All Slivers have \"At the beginning of your upkeep, this permanent deals 1 damage to you.\"",
-'−10: Create a colorless Equipment artifact token named Stoneforged Blade. It has indestructible, "Equipped creature gets +5/+5 and has double strike," and equip {0}.',
 'As long as the top card of your graveyard is a creature card, this creature has the full text of that card and has the text "{2}: Discard a card."',
-'The "legend rule" doesn\'t apply.',
+'Equipped creature has reach, "{2}, {T}: Tap target artifact or creature," and SUB_TEXT_420.',
+'When ~ dies, create ~, Frost Tongue, a legendary white Equipment artifact token with SUB_TEXT_659 "Whenever equipped creature attacks, tap target creature defending player controls," and equip {2}.',
+'−10: Create a colorless Equipment artifact token named Stoneforged Blade. It has indestructible, "Equipped creature gets +5/+5 and has double strike," and equip {0}.',
     ):
         print(expr)
 
