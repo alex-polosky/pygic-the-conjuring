@@ -1,5 +1,5 @@
 %import primitives (_A,_B,_C,_D,_E,_F,_G,_H,_I,_J,_K,_L,_M,_N,_O,_P,_Q,_R,_S,_T,_U,_V,_W,_X,_Y,_Z,_PLURAL,_POSSESSIVE)
-%import primitives (HYPHEN, WHOLE, ZERO, PLUS)
+%import primitives (ROMAN, HYPHEN, WHOLE, ZERO, PLUS, COMMA)
 
 QUANTITY: _O"ne"
     | _T"wo"
@@ -79,10 +79,9 @@ Y           : "Y"
 
 MINUS       : "minus"
 PLUSW       : "plus"
-DIVIDE      : "divided"
 
 //_BATTLEFIELD.9: "battlefield"
-ZONE.9: "graveyard" _PLURAL?
+ZONE.8: "graveyard" _PLURAL?
     | "battlefield"
     | "hand" _PLURAL?
     | "stack"
@@ -166,6 +165,7 @@ ON          : _O"n"
 ONCE        : _O"nce"
 
 AFTER       : _A"fter"
+BEFORE      : _B"efore"
 BEGAN       : "began"
 BEGINNING   : "beginning"
 DURING      : _D"uring"
@@ -201,16 +201,16 @@ THAT        : _T"hat" _POSSESSIVE?
 THIS        : _T"his"
 THE         : _T"he"
 THEY        : _T"hey"
-THEYRE      : _T"hey are" | _T"hey're"
-THEYVE      : "they have" | "they've"
+THEYRE      : _T"hey're" // _T"hey are"
+THEYVE      : "they've" // "they have"
 THERE       : _T"here"
 THERES      : _T"here's"
 THEIR       : _T"heir"
 THOSE       : _T"hose"
 TO          : "to"
 YOU         : _Y"ou"
-YOURE       : _Y"ou are" | _Y"ou're"
-YOUVE       : _Y"ou have" | _Y"ou've"
+YOURE       : _Y"ou're" // _Y"ou are"
+YOUVE       : _Y"ou've" // _Y"ou have"
 YOUR        : _Y"our"
 UNDER       : "under"
 WHICH       : "which"
@@ -251,6 +251,8 @@ THOUGH      : "though"
 UNSPENT     : "unspent"
 
 ADD         : _A"dd" _PLURAL?
+SUBTRACT    : _S"ubtract" _PLURAL?
+DIVIDE      : _D"ivide" (_PLURAL | "d")?
 ADDITIONAL  : _A"ddition" "al"?
 ASSIGN      : _A"ssign" _PLURAL?
 ATTACK      : _A"ttack" (_PLURAL | "ed" | "ing")?
@@ -298,6 +300,12 @@ REMAINS     : "remains"
 FLIP        : _F"lip"
 CYCLE       : "cycle" "d"?
 PLANESWALK.7: _P"laneswalk"
+APPLY       : "apply"
+LEVEL_UP    : "Level up"
+LEVEL       : "Level " WHOLE
+NOTE        : "note"
+SET         : "set"
+UNLOCK      : "unlock"
 
 ABLE        : "able"
 ACTIVE      : _A"ctive" | _A"ctivating" | _A"ctivation"
@@ -329,12 +337,22 @@ CHOOSING    : "choosing"
 PHASEDOUT.9 : "phased-out"
 PHASESOUT.9 : "phases out" | "phase out"
 KICKED      : "kicked"
+GUESSED     : "guessed " ("right" | "wrong")
+DIED_PLUS   : "left the battlefield"
+REVIVED_LITE: "left your graveyard"
+PAIRED      : "paired"
+PROMISED    : "promised"
+TIED        : "tied"
+LOCKED      : "locked"
+UNLOCKED    : "unlocked"
 
 ACTIVATING  : "activating"
 CHAOS       : "chaos ensues"
 TURNING     : "turning"
 
 LIFE        : _L"ife"
+KIND        : "kind"
+D20         : "d20"
 GAME        : _G"ame"
 TURN        : _T"urn" (_PLURAL | _POSSESSIVE | "ed")?
 DAMAGE      : _D"amage"
@@ -347,13 +365,25 @@ LOYALTIES   : "loyalty " ("ability" | "abilities")
 FACE        : "face" "d"?
 COIN        : "coin"
 DEVOTION    : "devotion"
-HANDSIZE    : "hand size"
+DECKSIZE.9  : "deck size"
+HANDSIZE.9  : "hand size"
 PROCESS     : "process"
 MONARCH     : "monarch"
 BLESSING    : _T"he city's blessing"
 HISTORIC    : "historic"
 PILE        : "pile" _PLURAL?
+LABEL       : "label"
 EMBLEM      : "emblem"
+GIFT        : "gift"
+PARTY       : ("your" | "full") " party"
+DAY_NIGHT   : "day" | "night"
+DIRECTION   : "left or right"
+    | "their left"
+    | "their right"
+    | "your left"
+    | "your right"
+    | "\"left\""
+    | "\"right\"" | "\"right"
 
 WIN         : _W"in" _PLURAL?
 WON         : "won"
@@ -364,6 +394,16 @@ PRODUCE     : "produce" ("d" | _PLURAL)?
 NXY_PT.8    : ((("-"|"+")?) (ZERO|WHOLE|"X"|"Y")) "/" ((("-"|"+")?) (ZERO|WHOLE|"X"|"Y"))
 COMBO       : "combination of" // Followed by mana pips, and/or, and, or, colors
 BASE        : "base"
+
+LEGEND_RULE : "\"legend rule\""
+BAND_RULE   : "\"bands with other\""
+VENTURE_CITY: "\""? "venture into Undercity"
+LEVEL_RULE  : "LEVEL"
+SAGA_LEVEL  : ROMAN (COMMA " " ROMAN) " " HYPHEN
+SCHEME      : "scheme" _PLURAL? " in motion"
+CRIME       : "commit" "ted"? " a crime"
+TRUTH       : "The same is true"
+UNLOCK_ROOM : "you fully unlock a Room"
 
 // Stuff I can't figure out due to complexities
 KW_WALK.9   : ("land"
@@ -376,3 +416,5 @@ KW_WALK.9   : ("land"
 
 SUB_TEXT    : "SUB_TEXT_" /\d+/
 INNER_TEXT  : "INNER_TEXT_" /\d+/
+
+BAD_END     : ".\""

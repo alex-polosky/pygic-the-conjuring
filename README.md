@@ -18,17 +18,33 @@ Also, it'd be cool to use the compiled MTG code to find combos or interactions. 
 
 ## Current metrics
 
-`Planeswalk` and `Phyrexian` have been included with rules; they accounted for ~150 line mismatches. That only resulted in an extra .01% of lines and .68% of tokens. It's slow progress
+- Some lines were not pre-processing properly
 
-Latest:
+- e / motion / set / unlock / size / crime / megamorph / d20 / paired / upkeep / gifts / true / ability capitalization / Party! / daynight / tied / locks
+  - Lines able to tokenize 28946 / 30209 : 95.82%
+  - Recognized tokens 3535 / 4356 : 81.15%
 
-- Lines able to tokenize 28367 / 30209 : 93.90%
-- Recognized tokens 3433 / 4303 : 79.78%
+#### Log
 
-Previous:
+- Added level handling
+  - Lines able to tokenize 28537 / 30209 : 94.47%
+  - Recognized tokens 3476 / 4325 : 80.37%
 
-- Tokenizing 93.3% of all oracle text lines
-- Recognizing 79.1% of all tokens
+- Tackled left/right/legends/band (mainly getting rogue quotes)
+  - Lines able to tokenize 28404 / 30209 : 94.02%
+  - Recognized tokens 3450 / 4302 : 80.20%
+
+- Added `King Darien XLVIII` specific name rip
+  - Lines able to tokenize 28369 / 30209 : 93.91%
+  - Recognized tokens 3433 / 4301 : 79.82%
+
+- `Planeswalk` and `Phyrexian` have been included with rules; they accounted for ~150 line mismatches.
+  - Lines able to tokenize 28367 / 30209 : 93.90%
+  - Recognized tokens 3433 / 4303 : 79.78%
+
+- Initial tracking
+  - Tokenizing 93.3% of all oracle text lines
+  - Recognizing 79.1% of all tokens
 
 ## Scripts and doing things
 

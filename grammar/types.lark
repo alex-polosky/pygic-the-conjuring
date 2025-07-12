@@ -12,9 +12,9 @@ _CARD_TYPE: _A"rtifact"
     | _K"indred"
     | _L"and"
     | _P"henomenon"
-    | _P"lane"
+    // | _P"lane" // No evidence that this is utilized in the grammar and it is causing a headache
     | _P"laneswalker"
-    | _S"cheme"
+    // | _S"cheme" // No evidence that this is utilized in the grammar and it is causing a headache
     | _S"orcery"
     | _V"anguard"
 CARD_TYPE.8: _CARD_TYPE (_PLURAL| _POSSESSIVE)?
@@ -632,7 +632,7 @@ MANA_COST: "{C}"
     | "{G/U/P}"
     | "{CHAOS}"
 
-INVERT_TYPE.9: (_N"on" | _N"on-")
+INVERT_TYPE.8: (_N"on" | _N"on-")
 
 // PW_COST.7: /^/ "["? ((PLUS | HYPHEN) (WHOLE+ | "X") | ZERO) "]"?
 PW_COST.7: "["? ((PLUS | HYPHEN) (WHOLE+ | "X") | ZERO) "]"?

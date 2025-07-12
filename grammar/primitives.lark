@@ -30,6 +30,7 @@ _POSSESSIVE: "'s" | "s'"
 
 WHOLE: ("1".."9")
 ZERO: "0"
+ROMAN : ("I" | "II" | "III" | "IIII" | "IV" | "V" | "VI" | "VII" | "VIII" | "VIIII" | "IX")
 
 COMMA       : ","
 PLUS        : "+"

@@ -38,12 +38,18 @@ def cardthings(card: ScryfallCard, ignore_card_names: list[str], set_types: list
         name = face[0]
         if name.startswith('A-') and face[0][2:] in face[1]:
             name = name[2:]
+        # Because why shouldn't there be specific name changes :eyeroll:
+        if name == 'King Darien XLVIII':
+            name = 'King Darien'
         if name not in ignore_card_names:
             value = f'~{i if i else ""}'
+            value = value.replace('A-', '')
             replacements[name] = value
             if ',' in name:
-                replacements[name.split(',')[0]] = value
-            value = value.replace('A-', '')
+                name = name.split(',')[0]
+                # TODO: We need to accomadate when the rules are actually targetting something else other than the card itself. Maybe check if there is a ',' to begin with? idk
+                # name += ' '
+                replacements[name] = value
 
     return [
         line.split('(')[0].strip()
@@ -75,6 +81,7 @@ def main(set_types=['core','expansion','commander','token','masters']):
         'Their','There', 'They\'re',
         'What', 'When','Where','Who', 'Why',
         'X',
+        'Undercity',
     ] + abilities + keywords
 
     total = len(data)
